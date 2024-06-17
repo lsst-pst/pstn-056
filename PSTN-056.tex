@@ -13,8 +13,7 @@
 
 % This can write metadata into the PDF.
 % Update keywords and author information as necessary.
-\hypersetup{
-    pdftitle={Survey Cadence Optimization Committee’s Phase 3 Recommendations},
+\hypersetup    pdftitle={Survey Cadence Optimization Committee’s Phase 3 Recommendations},
     pdfauthor={federica bianco (she/her/hers)},
     pdfkeywords={}
 }
@@ -23,7 +22,7 @@
 % \setDocSubtitle{A subtitle}
 
 \author{%
-federica bianco (she/her/hers)
+the SCOC
 }
 
 \setDocRef{PSTN-056}
@@ -56,6 +55,51 @@ The final recommendation of the SCOC for the Survey Strategy prior to the start 
 
 % ADD CONTENT HERE
 % You can also use the \input command to include several content files.
+\section{Introduction}
+
+With unprecedented engagement with the scientific community large, Robyn observatory has designed a process of incremental improvements on the survey strategy to maximize the overall scientific throughput of the LSST on the four science pillar, probing and dark energy building and unprecedented inventory of the solar system And the Milky Way and local and exploring the transient universe and beyond.
+
+As part of this process, the survey cadence optimization committee has been Student by the science advisor committee of Rubin observatory in 2018 to solicit review and integrate community feedback at large and make recommendations for the implementation of the LSST survey strategy to observe three Director. This document constitutes the third SCOC recommendation, phase 3 process of survey design Leading to the start of LSST it is the last recommendation this will deliver before the beginning of the survey. Review of the survey strategy will continues throughout the year LSST the SEC reviewing the survey through put on an annual basis and the living room recommendations for science and modifications. Answers open in phase 1, and phase 2 of this process
+
+
+
+The documentary storace follows… 
+
+The open question has been identified in phase 2 report section whatever are included here for the readers convenience
+The topics that the SCOC should focus on in the next round of deliberations follow.
+
+\begin{itemize}
+
+\item The SCOC recommends that the investigation of the filter swapping schemes on the filter wheel continue. After the November 2022 workshop a few experiments in swapping $u$,$z$, and $y$ instead of $u$ and $z$ were implemented in \texttt{v2.99} simulations. More work is needed to understand the impacts of this decision on the DDFs as well as on the WFD. Filter pairing prescriptions for the observation pairs should also be explored in some more depth.
+
+\item The current SCOC recommendation is to implement a rolling cadence with a half-sky rolling scheme and a 0.9 rolling weight. However, rolling impacts the uniformity of static data releases which, as experts in the community have highlighted, is necessary for static sky science in general and cosmology in particular. This issue may be resolved or mitigated at the software level in the creation of coadds and catalogs, rather than at the scheduler level. The community should specify the desired and necessary requirements for uniformity to enable the exploration of data processing solutions to this problem. Depending on the feasibility of a solution to ensure sufficient uniformity, the SCOC recommendation on rolling may be re-evaluated. 
+
+\item The SCOC is not ready to finalize a recommendation for the
+filter balance in the Galactic Plane, or for a final Galactic Plane/Bulge footprint, or the rolling scheme to be implemented on the Galactic Plane. The SCOC will work with the SMWLV and TVS SCs to ascertain the best solutions for Galactic science on filter balance and footprint. These decisions should, however, not impact decisions relating to the WFD and the time spent collectively on Galactic regions should not change.
+Galactic Plane pencil-beam surveys need to be defined more clearly to assess if they would ultimately result in ``nano-surveys'', which will require a fraction of time too small to be optimized at this stage, or to evaluate the possibility of incorporating them in a final Galactic Footprint recommendation.
+
+\item While the SCOC recommends the filter balance as implemented starting in \texttt{baseline\v2.0} should not be changed, it is possible that rebalancing the
+exposure time to compensate for performance and throughput in some filters as compared to others or shortening exposures in filters where the throughput exceeds expectations enabling the collection of more images in that filter (or overall) would lead to
+enhanced LSST science. The SCOC cannot finalize this recommendation at this time due to
+missing information about the characteristics of the system-as-built.
+
+
+
+\item {The SCOC will continue working in 2023 with the community to identify the specific intra-night cadence that maximizes the science throughput of the DDF survey, while not impacting the science performed by other surveys.} 
+
+\item{The SCOC shall work in coordination not only with the scientific community but also with the leadership of Rubin and the Euclid mission to identify cadence requirements, co-observing strategies, and paths to produce the data products that will enhance science through the coordinated observing of the EDFS.}
+
+\item The SCOC recommends the decisions on the ToO strategy be based on a recommendation to be delivered by science experts and Rubin experts in  2023 in a dedicated workshop.
+
+\item The SCOC awaits commissioning assessments of the viability of collecting images in a single 1x30s exposure in all filters (rather than 2x15s), which would lead to an increase in efficiency. The SCOC has thus far seen favorably a potential switch to a single 1x30s exposure and the associated efficiency gain. If commissioning reveals that a 1x30s exposure is indeed technically viable, the SCOC should review the benefits (and potential drawbacks) of visits in a single exposure and, if adopted, reassess its recommendations in the light of this increased efficiency.
+
+
+\item The SCOC recommends implementing a detailed coordination plan with the Early Science Rubin team to reach a final recommendation on the strategy to be implemented in the first year of the survey, including a scheme for the construction of templates.
+
+
+\end{itemize}
+
+
 
 \appendix
 % Include all the relevant bib files.
