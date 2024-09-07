@@ -1,0 +1,66 @@
+\section{Introduction}
+
+With an unprecedented engagement of the scientific community at large, the Vera C. Rubin Observatory (hereafter Rubin) has designed a process of incremental improvements on the survey strategy to maximize the overall scientific throughput of the Legacy Survey of Space and Time (LSST). The high-level requirements for the LSST are set by four science pillars: probing dark energy and dark matter, building an unprecedented inventory of the Solar System, mapping the Milky Way and Local Volume, and exploring the transient universe. These requirements are described in \cite{LPM-17} (hereafter Science Requirements Document, or \citetalias{LPM-17}, but significant flexibility in survey cadence remains within these requirements. The optimization of the survey strategy process is aimed at maximizing science for the four science pillars and increase the portfolio of LSST science by tuning the survey strategy and cadence within the SRD requirements (\citetalias{LPM-17}).
+
+As part of this process, the Survey Cadence Optimization Committee (SCOC) was set up by Rubin's Science Advisory Committee in 2018 to solicit review and integrate community feedback at large and make recommendations for the implementation of the LSST survey strategy to the Director of Operations. This document constitutes the third SCOC recommendation, resulting from the phase 3 process of survey design which started in January 2023, after the delivery of the Phase 2 recommendation (\citealt{PSTN-055} ---hereafter \citetalias{PSTN-055}--- and the baseline simulation \texttt{baseline\_v3.0}. This will be the last recommendation leading to the start of LSST. Yet, reviews of the survey strategy will continue throughout the 10-years of LSST with the SCOC reviewing the survey throughput and community feedback and renewing its recommendation on an annual basis. 
+
+The Phase 3 recommendation responds directly to the questions left open in \citetalias{PSTN-055} and updates and refines previous recommendations (\citetalias{PSTN-055} and \cite{PSTN-053}, hereafter \citetalias{PSTN-053}) The present document generally does not reiterate previous recommendations that have not changed.
+
+The document is structured as follows.
+
+
+
+
+
+
+The open questions identified in \citetalias{PSTN-055} Section 4  are included here for the reader's convenience in \autoref{sec:openquestions}. The SCOC recommendations relative to those questions follow each question. 
+
+%Topics that the SCOC should focus on in the next round of deliberations follow in \autoref{sec:next}.
+
+%In \autoref{sec:process} we describe the process of interaction with the community and iterative optimization of the LSST during Operations.
+
+\subsection{Note on how to read the SCOC plots}
+
+In this document you will see sky maps measuring quantities (\eg, number of visits) in healpixels. The typical sky pixelization that underlies the metric calculations the SCOC review is 128 sides healpixels (covering an area $\sim 0.2\mathrm{deg}^2$) although for particularly computationally intense MAFs this is turned down to 64 or 32.
+
+The SCOC typically reviews the outcome of MAFs across multiple \opsim\ to compare scientific performance. You will see plots in three styles:
+
+{\bf Heatmaps}: \autoref{fig:heatmap} -
+the divergent color scheme shows improvements in metrics in blue and drops in metrics in red. Note that different heat maps may show different ranges in the color scheme, but the SCOC typically considers changes of more than a few percent to be significant and less than a few percent to be in the noise. One of the \opsim\ is chosen as comparison and the corresponding column will look neutral in color.
+
+\begin{figure}
+    \centering
+
+\includegraphics[width=0.8\textwidth]{figures/v1-v34heatmap.png}
+\caption{A heatmap produced by the Observing Strategy team for the SCOC. The plot compares the performance of selected metrics across baseline simulations form \baseline{1.X} (original survey strategy) through \baseline{3.4}. In these plots, a \opsim\ is selected as the reference and all other \opsim s' performances are shown relative to that. That is: the reference \opsim\ (\baseline{2.0} in this case) has MAF=1 for all the metrics. Blue colors indicate a positive metric value, \ie\ an improvement. Red colors indicate a performance drop with respect to the reference \opsim.}
+\label{fig:heatmap}
+\end{figure}
+
+\FloatBarrier
+
+{\bf Radar plots}: \autoref{fig:radar} - when comparing small numbers of metrics and few \opsim\ we often use radar plots. Each corner of the radar plot corresponds to a metric and the colored lines inside of the plots that join each corner show metric performance. In these plots the comparison \opsim s looks like a N-gone (or N-sided circle). Where the MAF performance shows improvements compared to the comparison \opsim\ the point lies outside of the N-gone, where its a loss it sits inside. The range of performance changes, so make sure you carefully inspect the plot to see the performance scaling going in and out of the N-gone (typical values are 0.9-1.1). 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/radarplot.png}
+\caption{A radar plot comparing performance of MAFs under different filter swapping schemes (see \autoref{sec:filterswap}). This plot compres \baseline{3.0} with \baseline{3.2}. All metrics within perform as well or better in \baseline{3.2} as shown by the orange point laying outside of the blue polygon, except \texttt{N YSO} where, however, the loss is minimal and likely not statistically significant. The range of the axis is 0.8-1.3, indicating that a point lying in the center would measure a performance 20\% worse than the reference \opsim\ and a point on the outer perimeter would indicate a 30\% improvement.}
+\label{fig:radar}
+\end{figure}
+
+\FloatBarrier
+
+{\bf Line plots}: \autoref{fig:lineplot} -
+line plots can show multiple \opsim s and metrics at once. The comparison metric will sit as a horizontal line at 1.0 throughout the plot. The regions outside of the 3\% range we typically consider not-significant are shaded in red (for MAF loss) and green (for MAF gains).
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/lineplot.png}
+    \caption{Line plot showing the performance of a collection of \opsim\ designed for the Milky Way Task Force (see \autoref{sec:galaxy}) and the corresponding performance for a collection of related Microlensing MAFs. The comparison \opsim\ is \baseline{3.3} (where all the MAFs meet at $y=1$.)}
+\label{fig:lineplot}
+\end{figure}
+\FloatBarrier
+
+We note that the LSST survey is actually an ensamble of surveys. It includes a main survey, knwon as Wide Fast Deep (WFD) which by SRD requirement should receive more than 825 observations and covered at least 18,000 square degrees, a Galactic Plane (and Bulge) survey. Furthermore, a WFD low-dust region is defined with limits $-70^o \leq \mathrm{Dec} \leq +12.5^o$ for 
+$\mathrm{RA} \sim   7-18 h$ and $-72^o \leq \mathrm{Dec}\leq +3^o$
+for $0 \lesssim \mathrm{RA} \lesssim 7$ h and $18 h \lesssim \mathrm{RA} \lessim 24 h$, with the addition of the Virgo cluster \citetalias{PSTN-053}.  Special regions in the LSST include the LMC, SMC, and South Celestial Pole and North Ecliptic Spur. Microsurveys can be performed and \citetalias{PSTN-053} committed to perform a twilight Near-Earth-Objects microsurvey in Y1 and to accept further proposals for future microsurveys after the start of LSST.
