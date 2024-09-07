@@ -6,18 +6,27 @@ As part of this process, the Survey Cadence Optimization Committee (SCOC) was se
 
 The Phase 3 recommendation responds directly to the questions left open in \citetalias{PSTN-055} and updates and refines previous recommendations (\citetalias{PSTN-055} and \cite{PSTN-053}, hereafter \citetalias{PSTN-053}) The present document generally does not reiterate previous recommendations that have not changed.
 
+
+Finally, to help the reader understand the text that follows, we note that the LSST survey is actually an ensamble of surveys. It includes a main survey, knwon as Wide Fast Deep (WFD) which by SRD requirement should receive more than 825 observations and covered at least 18,000 square degrees, a Galactic Plane (and Bulge) survey. Furthermore, a WFD low-dust region is defined with limits $-70^o \leq \mathrm{Dec} \leq +12.5^o$ for 
+$\mathrm{RA} \sim   7-18 h$ and $-72^o \leq \mathrm{Dec}\leq +3^o$
+for $0 \lesssim \mathrm{RA} \lesssim 7$ h and $18 h \lesssim \mathrm{RA} \lesssim 24 h$, with the addition of the Virgo cluster \citetalias{PSTN-053}.  Special regions in the LSST include the LMC, SMC, and South Celestial Pole and North Ecliptic Spur. Microsurveys can be performed and \citetalias{PSTN-053} committed to perform a twilight Near-Earth-Objects microsurvey in Y1 and to accept further proposals for future microsurveys after the start of LSST.
+
 The document is structured as follows.
-
-
-
 
 
 
 The open questions identified in \citetalias{PSTN-055} Section 4  are included here for the reader's convenience in \autoref{sec:openquestions}. The SCOC recommendations relative to those questions follow each question. 
 
+Additional changes to the survey strategy are described in \autoref{sec:additional}. 
+
+The current recommendation is summarized in \autoref{sec:summary}.
 %Topics that the SCOC should focus on in the next round of deliberations follow in \autoref{sec:next}.
 
 %In \autoref{sec:process} we describe the process of interaction with the community and iterative optimization of the LSST during Operations.
+
+\section{Executive Summary of the Phase 3 recommendation}
+
+Notable updates from previous recommendations, and corresponding changes to the baseline, include: updating system throughputs,  expectations for engineering time, and slew performance; tweaking the filter balance in response to throuhgput changes; refining observing choices in the Galactic Plane, Bulge, and LMC/SMC/SCP; defining the implementation plan for the ToO program; recommending single visit exposures over visits implemented in ``snaps''; investigating new rolling strategy options; refining the DDF observing plans.
 
 \subsection{Note on how to read the SCOC plots}
 
@@ -49,18 +58,14 @@ the divergent color scheme shows improvements in metrics in blue and drops in me
 
 \FloatBarrier
 
-{\bf Line plots}: \autoref{fig:lineplot} -
-line plots can show multiple \opsim s and metrics at once. The comparison metric will sit as a horizontal line at 1.0 throughout the plot. The regions outside of the 3\% range we typically consider not-significant are shaded in red (for MAF loss) and green (for MAF gains).
+%{\bf Line plots}: \autoref{fig:lineplot} -
+%line plots can show multiple \opsim s and metrics at once. The comparison metric will sit as a horizontal line at 1.0 throughout the plot. The regions outside of the 3\% range we typically consider not-significant are shaded in red (for MAF loss) and green (for MAF gains).
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/lineplot.png}
-    \caption{Line plot showing the performance of a collection of \opsim\ designed for the Milky Way Task Force (see \autoref{sec:galaxy}) and the corresponding performance for a collection of related Microlensing MAFs. The comparison \opsim\ is \baseline{3.3} (where all the MAFs meet at $y=1$.)}
-\label{fig:lineplot}
-\end{figure}
-\FloatBarrier
-
-We note that the LSST survey is actually an ensamble of surveys. It includes a main survey, knwon as Wide Fast Deep (WFD) which by SRD requirement should receive more than 825 observations and covered at least 18,000 square degrees, a Galactic Plane (and Bulge) survey. Furthermore, a WFD low-dust region is defined with limits $-70^o \leq \mathrm{Dec} \leq +12.5^o$ for 
-$\mathrm{RA} \sim   7-18 h$ and $-72^o \leq \mathrm{Dec}\leq +3^o$
-for $0 \lesssim \mathrm{RA} \lesssim 7$ h and $18 h \lesssim \mathrm{RA} \lesssim 24 h$, with the addition of the Virgo cluster \citetalias{PSTN-053}.  Special regions in the LSST include the LMC, SMC, and South Celestial Pole and North Ecliptic Spur. Microsurveys can be performed and \citetalias{PSTN-053} committed to perform a twilight Near-Earth-Objects microsurvey in Y1 and to accept further proposals for future microsurveys after the start of LSST.
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.8\linewidth]{figures/lineplot.png}
+%    \caption{Line plot showing the performance of a collection of \opsim\ designed for the Milky Way Task Force (see \autoref{sec:galaxy}) and the corresponding performance for a collection of related Microlensing MAFs. The comparison \opsim\ is \baseline{3.3} (where all the MAFs meet at $y=1$.)}
+%\label{fig:lineplot}
+%\end{figure}
+%\FloatBarrier
