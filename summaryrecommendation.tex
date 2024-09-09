@@ -55,14 +55,20 @@ These recommendations will be implemented in the \baseline{4.0} simulations. A s
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\linewidth]{figures/scoc_heatmap.png}
+    \begin{overpic}[width=0.8\textwidth]{figures/scoc_heatmap.png}
+        	\put(50,50){\color{lsstblue}\huge DRAFT}
+    \end{overpic}
+    %\includegraphics[width=0.9\linewidth]{figures/scoc_heatmap.png}
     \caption{LSST performance on key metrics for different \opsim s including the Phase 3 recommendation (this document). From left to right, then sequence shows progressively newer \opsim s, starting with the baseline in effect through 2018 (\texttt{v1.x}) up to the baseline proposed with this recommendation (\baseline{3.6}) and some variations on the latter. Starting with \baseline{3.6} we include more realistic down time expectations in Y1 and the effects of slew jerk on scheduling and observing. This causes an overall decreass in the number of visits (see also \autoref{fig:nvisits}). \baseline{3.6} is also the first \opsim\  shown here which includes the ToO program. Rolling is implemented in 3 cycles in \baseline{3.6}. This achieves desired uniformity in DR5 and DR8 (see \autoref{sec:rolling}). \texttt{four cycles} implements rolling in four cycles. The SCOC will not commit to a recommendation on the specific rolling implementation until the release of its Y1 recommendation. The community is encouraged to explore the impact of adopting either rolling strategy on their science. A version of \baseline{3.6} without ToO (\texttt{no ToO}) is included to allow the community to see the impact of the ToO program but the SCOC is committed to recommending the implementation of a ToO program as simulated in \baseline{3.6}. Finally, we include an implementation of \baseline{3.6} where visits are conducted in a single exposure instead of two snaps (\texttt{single snap}). The SCOC recommends the implementation of LSST in single visits (as shown in this simulation); this recommendation is, however, pending commissioning outcomes.}
     \label{fig:summary}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{figures/total_nvisits.png}
+    \begin{overpic}[width=0.8\textwidth]{figures/total_nvisits.png}
+        	\put(50,30){\color{lsstblue}\huge DRAFT}
+    \end{overpic}
+    %\includegraphics[width=0.5\linewidth]{figures/total_nvisits.png}
     \caption{Number of LSST visits for the same set of \opsim s used in \autoref{fig:summary}. The number of observations decreses between \texttt{v3.4} and \baseline{3.6} because of the inclusion of more realistic down times in Y1, of the effects of jerk on slew and scheduling, and, in part, because of the inclusion of the ToO program in LSST. This drop in number of visit determines a general loss of performance on all metrics, as seen in \autoref{fig:summary}. The increase in efficiency associated with moving to single exposure visits (the \opsim\ labeled as \texttt{single snaps}) largely recovers the visits lost between \texttt{3.4} and \baseline{3.6}. Nonetheless, after Y1, when the system performance is better understood, n the future, the SCOC will consider how the additional time may be allocated (\autoref{sec:snaps}). }
     \label{fig:nvisits}
 \end{figure}

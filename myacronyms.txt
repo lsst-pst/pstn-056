@@ -5,3 +5,14 @@
 #
 # Example:
 #   MIA:Missing In Action
+E2V:One kind of LSST CCD chips
+Y1:the first year of LSST
+Y2:the second year of LSST
+Y3:the third  year of LSST
+Y4:the fourth year of LSST
+Y7:the seventh year of LSST
+Y10:the tenth and last year of LSST
+DR5: Data Release 5
+DR8: Data Release 8
+O4: the fourth run of LVK
+O5: the fifth run of LVK

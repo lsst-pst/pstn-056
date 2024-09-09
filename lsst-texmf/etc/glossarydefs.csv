@@ -16,11 +16,13 @@ AAVSO,American Association of Variable Star Observers,TS,Document-11922,,A
 ABI,Application Binary Interface,Gen,,,A
 ABOD,AURA Board of Directors,Gen,,,A
 AC,Alternating Current,Gen,,,A
+AC,Access Control,DM,,,A
 ACCS,Auxiliary Camera Control System,LSST DM,,,A
 ACGIH,American Conference of Governmental Industrial Hygienists,Gen,,,A
 ACI,Application Centric Infrastructure,IT,,,A
 ACID,"Atomicity, Consistency, Isolation, and Durability",DM,,,A
 ACM,Award Cash Management Service,OPS,,,A
+ACP,Access Control Plan,OPS,,,A
 ACWP,Actual Cost of Work Performed,Gen,,,A
 AD,Associate Director,OPS,,,A
 ADAM,"Asteroid Discovery, Analysis, and Mapping",Sci,,,A
@@ -69,6 +71,7 @@ API,Application Programming Interface,Gen,,,A
 APS,American Physical Society,TS,Document-11933,,A
 ARAS,Astronomical Ring for Access to Spectroscopy,Sci,,,A
 ARC,Advanced Resource Connector,DM,http://www.nordugrid.org/documents/arc6/,,A
+ARP,Address Resolution Protocol,IP,,,A
 ASAP,As Soon As Possible,Gen,,,A
 ASAS-SN,All-Sky Automated Survey for Supernovae,Sci,,,A
 ASCII,American Standard Code for Information Interchange,Gen,,,A
@@ -78,13 +81,16 @@ ASP,Astronomical Society of the Pacific,TS,Document-11934,,A
 AST,NSF Division of Astronomical Sciences,TS,Document-11935,,A
 ASTRON,Netherlands Institute for Radio Astronomy,Gen,,,A
 AT,Auxiliary Telescope,TS,,,A
+AT,Awareness and Training,IT,,,A
 ATCA,Advanced Telecommunications Architecture,TS,Document-11936,,A
 ATCS,Auxiliary Telescope Control System,TSSW,,,A
 ATLAS,A Toroidal LHC Apparatus,Gen,,,A
 ATLAS,Asteroid Terrestrial-impact Last Alert System,Sci,,,A
 ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
+AU,Audit and Accountability,IT,,,A
 au,astronomical unit,Gen,,,A
+AUP,Acceptable Use Policy,IT,,,A
 AURA,Association of Universities for Research in Astronomy,Gen,,,A
 Avro,is a row-oriented remote procedure call and data serialization framework developed within Apache's Hadoop project,OPS,,,A
 AVS,Alert Vetting System,OPS,,,A
@@ -121,6 +127,8 @@ BSR,Business Systems Review,OPS,,,A
 BTS,Base (La Serena) Test Stand,LSST,,,A
 BTU,British Thermal Unit,OPS,,,A
 CA,Control (or Cost) Account,Gen,,,A
+CA,Certificate Authority,DM,,,A
+CA,"Certification, Accreditation, and Security Assessments",IT,,,A
 CAA,Committee on Astronomy and Astrophysics (NSF),Gen,,,A
 CADC,Canadian Astronomy Data Centre,Gen,,,A
 CALTECH,California Institute of Technology,Gen,,,A
@@ -144,6 +152,7 @@ CCOB,Camera Calibration Optical Bench,LSST DM,,,A
 CCP,Change Control Process,Adm,,,A
 CCS,Camera Control System,LSST DM,,,A
 CDF,Cumulative Distribution Function,Sci,,,A
+CDM,(Lamda) Cold Dark Matter,Sci,,,A
 CDMX,Ciudad de Mexico,Gen,,,A
 CDN,Content Delivery Network,DM IT,,,A
 CD-4,Critical Decision 4,DOE,,,A
@@ -167,6 +176,7 @@ CHEP,Computing in High Energy and Nuclear Physics,Sci,,,A
 CHIME,Canadian Hydrogen Intensity Mapping Experiment,Sci,,,A
 CI,Continuous Integration,DM,,,A
 CI,Cyber Infrastructure,Sci,,,A
+CIDR,Classless Inter-Domain Routing,DM,,,A
 CIGALE,Code Investigating GALaxy Emission,Sci,https://cigale.lam.fr/,,A
 CIS,Computer Infrastructure Support,TS,Document-11991,,A
 CL,Command Language,Sci,IRAF,,A
@@ -186,16 +196,17 @@ CNP,Conditional Neural Processes,Sci,,,A
 CNPG,Cloud Native Postgres,DM,,,A
 CNRS,Centre national de la recherche scientifique,Gen,,,A
 CO,Carbon Monoxide,Sci,,,A
-ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,A
 COMP,Complete,PMO,,,A
 COMPASS,Catalogues of Objects and Measured Parameters from All Sky Surveys,Gen,,,A
 CORBA,Common Object Request Broker Architecture,Gen,,,A
 CoRoT,"Convection, Rotation et Transits plan\'{e}taires",Gen,,,A
 COS,Center Operations Services,OPS,,,A
+COSMOS,Cosmic Evolution Survey,Sci,,,A
 COTS,Commercial-Off-The-Shelf,Gen,,,A
 COVID,COrona VIrus Disease,Gen,,,A
 COVID19,COrona VIrus Disease 2019,Gen,,,A
 CP,catalog prices,TS,Document-12022,,A
+CP,Contingency Planning,DM,,,A
 CPI,Cost Performance Index,Gen,,,A
 CPP,Calibration Production Processing,LSST DM,,,A
 CPR,Cardiopulmonary resuscitation,Gen,,,A
@@ -330,6 +341,7 @@ EAS,Environmental Awareness System,TS,,,A
 EB,ExaByte,Gen,,,A
 EC2,Amazon Elastic Compute Cloud,DM,,,A
 EDC,EPO Data Center,OPS EPO,,,A
+EDFS,Euclid Deep Field South,Sci,,,A
 EDR,early data release,TS,Document-11972,,A
 EE,engineering estimate,TS,Document-12024,,A
 EEPROM,Electrically Erasable Programmable Read-Only Memory,Gen,,,A
@@ -359,6 +371,7 @@ ESFRI,European Strategy Forum on Research Infrastructures,Gen,,,A
 ESNet,Energy Sciences Network,Gen,,,A
 ESO,European Southern Observatory,OPS,,,A
 ESP,Early Science Program,OPS,,,A
+ESS,Environmental Sensors Support,TS,https://obs-ops.lsst.io/Observatory-Control-System/EAS/ESS/index.html,,A
 ET,exposure time,TS,Document-12010,,A
 ETC,Estimate To Complete,Gen LSST DM,,,A
 ETL,extract-transform-load,TS,Document-11957,,A
@@ -371,6 +384,7 @@ EVM,Earned Value Management,Adm Gen,,,A
 EVMS,Earned Value Management System,Adm Gen,,,A
 EXIST,Energetic X-ray Imaging Survey Telescope,TS,Document-12026,,A
 F2F,Face 2 Face (meeting),DM,,,A
+FACTS,Foreign Access Central Tracking System,DM,,,A
 FAFF,First-Look Analysis and Feedback Functionality,TS,,,A
 FAIR,"Findable, Accessible, Interoperable and Reusable",DM,,,A
 FAQ,Frequently Asked Question,Gen,,,A
@@ -379,7 +393,9 @@ FATC,Financial and Administrative Terms and Conditions,OPS,,,A
 FBOT,Fast blue optical transient,Sci,,,A
 FBOTs,Fast blue optical transients,Sci,,,A
 FBS,Feature-Based Scheduler,Sims,,,A
+FCU,Fain Coil Unit,TS,,,A
 FDP,federated data product,TS,Document-11990,,A
+FDQN,Fully Qualified Domain Name,DM,,,A
 FDR,Final Design Review,LSST DM,,,A
 FEA,Finite Element Analysis,OPS,,,A
 FEC,Front-End Cage,TS,,,A
@@ -506,6 +522,7 @@ HVAC,"Heating, Ventilation, and Air Conditioning",OPS,,,A
 HW,HardWare,Gen,,,A
 I&T,Integration and Test,Gen,,,A
 IaC,Infrastructure as Code,IT,,,A
+IA,Identification and Authentication,IT,,,A
 IAM,Identity and Access Management,IT,,,A
 IaS,Infrastructure as a Service,IT,,,A
 IAU,International Astronomical Union,Gen,,,A
@@ -518,6 +535,8 @@ IDA,Interface Design Artifact,TS,,,A
 IDAC,Independent Data Access Center,DM OPS,,,A
 IDF,Interim Data Facility,OPS,,,A
 IDL,Interactive Data Language,Gen,,,A
+IDS,Intrusion Detection System,IT,,,A
+IGWN,International Gravitational Wave Network,Sci,,,A
 IIP,image ingest and processing,TS,Document-12029,,A
 ILC,Inner Loop Controller,PSE,,,A
 IMBH,Intermediate Mass Black Hole,Sci,,,A
@@ -534,12 +553,13 @@ IPAC,No longer an acronym; science and data center at Caltech,Gen,,,A
 IPEDS,Integrated Postsecondary Educational Data System,DEI,,,A
 IPS,Integrated Project Schedule,Adm,,,A
 IPsec,Internet Protocol Security,DM,,,A
-IR,infrared,TS,Document-11949,,A
+IR,infrared,Gen,Document-11949,,A
+IR,Incident Response,IT,,,A
 IRAF,Image Reduction and Analysis Facility,Hist,,,A
 IRIS,e-Infrastructure for Research and Innovation for STFC,OPS,,,A
 IRNC,International Research Network Connections,TS,Document-11973,,A
 IRSA,Infrared Science Archive (NASA),Gen,,,A
-IRU,indefinable right to use,TS,Document-11969,,A
+IRU,indefeasible right to use,TS,Document-11969,,A
 IS,Interface Scientist,LSST DM,,,A
 ISD,Interface Support Document,,,,A
 ISM,interstellar medium,TS,Document-12009,,A
@@ -550,6 +570,7 @@ IT,Information Technology,Gen,,,A
 ITAR,International Traffic in Arms Regulations,Gen,,,A
 ITC,Information Technology Center,LSST DM,,,A
 ITIL,Information Technology Infrastructure Library,Gen,,,A
+ITL,Imaging Technology Laboratory (UA),Sci,,,A
 ITO,IT Operations,OPS OIR,,,A
 ITSC,Information Technology Services Committee,Adm,,,A
 ITTN,IT Technote,IT,,,A
@@ -557,6 +578,7 @@ IUSE,Improving Undergraduate STEM Education,Sci,,,A
 IVOA,International Virtual-Observatory Alliance,Gen,,,A
 JBOD,Just a Bunch of Disks,OPS,,,A
 JEDI,Job Execution and Definition Interface,OPS,,,A
+JCAP,Journal of Cosmology and Astroparticle Physics,Sci,,,A
 JD,Julian Date,Gen,,,A
 JDBC,Java DataBase Connectivity,Gen,,,A
 JDR,Joint Directors Review,LSST,,,A
@@ -564,6 +586,8 @@ JHU,Johns Hopkins University,Gen,,,A
 JIT,Just In Time,Gen,,,A
 JOG,Joint Oversight Group,Adm,,,A
 JOR,Joint Operations status Review,OPS,,,A
+JPEG,Joint Photographic Experts Group,Gen,,,A
+JPG,Joint Photographic Experts Group,Gen,,,A
 JPL,Jet Propulsion Laboratory (DE ephemerides),Gen,,,A
 JRE,Java Runtime Environment,Gen,,,A
 JSON,JavaScript Object Notation,Gen,,,A
@@ -572,6 +596,7 @@ JTM,Joint Technical Meeting,LSST DM,,,A
 JVM,Java Virtual Machine,Gen,,,A
 JWST,James Webb Space Telescope (formerly known as NGST),Gen,,,A
 JWT,JSON Web Token,DM,,,A
+KAGRA,Kamioka Gravitational Wave Detector,Sci,,,A
 KASI,Korea Astronomy and Space Science Institute,Gen,,,A
 K8S,Kubernetes provisioning system,IT LSST DM,,,A
 KB,KiloByte,Gen,,,A
@@ -579,6 +604,7 @@ KBO,Kuiper-Belt Object,Gen,,,A
 kbps,kilobits per second,Gen,,,A
 KIPAC,Kavli Institute for Particle Astrophysics and Cosmology,Sci,,,A
 KISS,"Keep It Simple, Stupid",Gen,,,A
+KN,Kilonova,Sci,,,A
 KPM,Key Performance Metric,LSST DM,,,A
 KPMO,Kitt Peak Mountain Operations,OPS,,,A
 KPNO,Kitt Peak National Observatory,OPS,,,A
@@ -639,11 +665,13 @@ LSSTPO,LSST Project Office,Adm,,,A
 LTS,LSST Telescope and Site (Document Handle),TS,,,A
 LUT,Look-Up Table,Gen,,,A
 LV,Local Volume,Sci,,,A
+LVK,LIGO-Virgo-KAGRA,Sci,,,A
 LVV,LSST Verification and Validation,Gen,,,A
 LZ,LUX-ZEPELIN (Dark Matter Mission),Sci,,,A
 M1,primary mirror,TS,Document-12017,,A
 M1M3,Primary Mirror Tertiary Mirror,LSST,,,A
 M2,Secondary Mirror,LSST,,,A
+MA,Maintenance,IT,,,A
 M3,tertiary mirror,TS,Document-12023,,A
 MAC,Media Access Control,IT,,,A
 MACHO,massive compact halo object,TS,Document-11962,,A
@@ -683,6 +711,7 @@ MOPS,Moving Object Processing System (deprecated; see SSP),LSST DM,,,A
 MOSFET,Metal-Oxide Semiconductor Field-Electric Transistor,Gen,,,A
 MOSS,Multi-beam Optical Steering Sensor,LSST,,,A
 MOU,Memo Of Understanding,OPS,,,A
+MP,Media Protection,IT,,,A
 MPA,Max Planck Institute for Astrophysics,Gen,,,A
 MPC,Minor Planet Center,Gen,,,A
 MPCORB,Minor Planet Center Orbit database,Gen,,,A
@@ -720,6 +749,8 @@ NCOIRA,"(Obsolete, now NOIRLab) National Center for Optical and Infrared Astrono
 NCR,Non Conformance Report,PMO,,,A
 NCSA,National Center for Supercomputing Applications,Gen,,,A
 NCW,Non Conformance Waiver,PMO,,,A
+NDA,Non Disclosure Agreement,Gen,,,A
+NDAA,National Defense Authorization Act,OPS,,,A
 NEA,Near-Earth Asteroid,Gen,,,A
 NED,NASA/IPAC Extragalactic Database,Gen,,,A
 NEO,Near-Earth Object,Gen,,,A
@@ -731,8 +762,9 @@ NFS,Network File System,Gen,,,A
 NGC,New General Catalogue,Sci,,,A
 NGSS,Next-Generation Science Standards,OPS,,,A
 NGVLA,Next Generation Very Large Array,OPS,,,A
-NIR,Near Infrared,Sci,,,A
+NIC,Network Interface Card,DM,,,A
 NICRA,(federally) Negotiated Indirect Cost Rate Agreement,Adm,,,A
+NIR,Near Infrared,Sci,,,A
 NIST,National Institute of Standards and Technology (USA),Gen,,,A
 NLR,National Lambda Rail,TS,Document-11941,,A
 NLT,NOIRLab Leadership Team,OPS,,,A
@@ -797,6 +829,7 @@ OSS,Oil Supply System,TS,,,A
 OSX,Macintosh Operating System (obsolete; now macOS),Gen,,,A
 OTB,Over Target Baseline,Gen,,,A
 OTS,observatory telemetry system,TS,Document-12015,,A
+OUO,Official Use Only,OPS,,,A
 P5,"The Particle Physics Project Prioritization Panel is a scientific advisory panel tasked with recommending prioritization for U.S. investment in particle physics research, on the basis of various funding scenarios.",Adm,,,A
 P6,"Primavera, a comprehensive project management tool",Adm,,,A
 PanDA, Production ANd Distributed Analysis system,OPS,,,A
@@ -820,6 +853,8 @@ PDR2,Public Data Release 2 (HSC),OPS,,,A
 PDM,Phase Dispersion Minimization,OPS,,,A
 PDS,Planetary Data System,Sci,,,A
 PDU,Power Distribution Unit,LSST DM,,,A
+PE,Physical and Environmental Protection,IT,,,A
+PEN,Penetration testing,IT,,,A
 PEP,Project Execution Plan,Adm,,,A
 PFS,Prime Focus Spectrograph,Gen,,,A
 PHA,potentially hazardous asteroids,TS,Document-11971,,A
@@ -827,6 +862,7 @@ photo-z,"photometric redshift",Sci,,,A
 PI,Principle Investigator,Sci OPS,,,A
 PII,personally identifiable information,TS,Document-11976,,A
 PIM,Protocol Independent Multicast,IT,,,A
+PL,Planning,IT,,,A
 PLATO,PLAnetary Transits and Oscillations of stars,Sci,,,A
 PLL,Phase-Locked Loop,Gen,,,A
 PM,Project Manager,LSST DM,,,A
@@ -849,6 +885,7 @@ PPE,Personal Protection Equipment,OPS,,,A
 PR,Pull Request,Gen,,,A
 PRC,Procurement Charge,OPS DOE,,,A
 PRT,Personal Research Time,OPS,,,A
+PS,Personnel Security,IT,,,A
 PS,Project Scientist,LSST DM,,,A
 PS1,Pan-STARRS 1 survey,LSST DM,,,A
 PS1-MDS,PS1 Medium Deep Survey,Sci,,,A
@@ -875,6 +912,7 @@ QOS,Quality of Service,IT,,,A
 QSERV,LSST Query Services,TS,Document-12025,,A
 QSFP,Quad Small Form Factor Plugable,IT,,,A
 QSO,Quasi-Stellar Object (Quasar),Sci,,,A
+RA,Risk Assessment,IT,,,A
 RA,Right Ascension,Gen,,,A
 RAC,Resource Allocation Committee,OPS,,,A
 RAD,Rear Access Door,TS,,,A
@@ -936,6 +974,7 @@ RTV,raster to vector,TS,Document-11984,,A
 RU,Rack Unit,IT,,,A
 S3,(Amazon) Simple Storage Service,IT,,,A
 S3DF,SLAC Shared Scientific Data Facility,LSST,https://www.amlight.net/?page_id=24,,A
+SA,System and Services Acquisition,IT,,,A
 SA3CC,South American-African Astronomy Coordination Committee,LSST,https://www.amlight.net/?page_id=24,,A
 SAA,Single Axis Actuator,TS,,,A
 SAACC,South American Astronomy Coordination Committee (now SA3CC),LSST,https://www.amlight.net/?page_id=24,,A
@@ -952,6 +991,7 @@ SATA,Serial Advanced Technology Attachment,IT DM,,,A
 SB,Surface Brightness,Sci,,,A
 SBS,Shared Business Services,OPS OIR,,,A
 SC,System Commissioning,PMO,,,A
+SC,System and Communications Protection,IT,,,A
 SC,Science Collaboration,DM,,,A
 SCADA,Supervisory Control And Data Acquisition,TS,,,A
 SCIDAR,Scintillation Detection And Ranging,TS,,,A
@@ -974,6 +1014,7 @@ SFR,Supplemental Funding Request,Adm,,,A
 SHA-1,Secure Hash Algorithm 1,Gen,,,A
 SHE,"Safety, Health, and Environmental",,,,A
 SHPE,Society of Hispanic Professional Engineers,DEI,,,A
+SI,System and Information Integrity,IT,,,A
 SI,Syst\`eme International (International System of units defined by ISO),Gen,,,A
 SIA,Simple Image Access (IVOA standard),VO,,,A
 SIAP,Simple Image Access Protocol (IVOA standard),VO,,,A
@@ -991,9 +1032,11 @@ SMC,Small Magellanic Cloud,Sci,,,A
 SME,Subject Matter Expert,Gen,,,A
 SMF,Stellar Mass Function,Sci,,,A
 SMR,Spherical Mirror Retroreflectors,Sci,,,A
+SMWLV,"Stars, Milky Way and Local Volume",Sci,,,A
 SN,SuperNovae,Sci,,,A
 SNANA,SuperNova ANAlysis (\url{https://snana.uchicago.edu/}),Sci,,,A
 SNAPS,Solar System Notification Alert Processing System,OPS,,,A
+SNEWS,SuperNova Early Warning System,Sci,,,A
 SNR,Signal to Noise Ratio,DM,,,A
 SNTC,Smart Net Total Care,IT,,,A
 SO,Simons Observatory,Sci,,,A
@@ -1286,9 +1329,10 @@ CmdLineTask,"A special kind of Task that can read its inputs and write its outpu
 Coadd Image,"An image that is the combination of multiple input images. The inputs are aligned to a common projection and pixel grid, corrected to the same photometric scale and zero-point, with bad pixels and artifacts rejected. (Image PSFs may also be matched prior to co-addition.) Coadd Images have had non-astrophysical background removed",DM,,"Co-Add, CoAdd, co-add, coadd",G
 COBRA,The trade name for an integrated suite of project management software programs that work together to track all aspects of an ongoing construction job,Adm,,,G
 Collimated Beam Projector,"The hardware to project a field of sources onto discrete sections of the telescope optics in order to characterize spatial variations in the telescope and instrument transmission function, and to monitor filter throughput evolution during the survey. Images obtained using the CBP will be used in calibration",DM,LDM-151,CBP,G
+ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,G
 command-line task,"An enhancement of a Task in the LSST Stack context, it is the equivalent of a data processing pipeline and may be run directly from the shell command-line. A command-line task minimally consists of: a configuration and metadata, an argument parser, and a run method and a runner script",DM,,Task,G
 Commissioning,"A two-year phase at the end of the Construction project during which a technical team a) integrates the various technical components of the three subsystems; b) shows their compliance with ICDs and system-level requirements as detailed in the LSST Observatory System Specifications document (OSS, LSE-30); and c) performs science verification to show compliance with the survey performance specifications as detailed in the LSST Science Requirements Document (SRD, LPM-17)",Adm,,,G
-"community alert broker","term for Broker built by the community",SCI,,,G
+"community alert broker","term for Broker built by the community",Sci,,,G
 Compliance,"Adherence to the laws, regulations, award terms and conditions, specifications, and internal policies applicable to the LSST Project",Adm,,,G
 Compliance and Quality Administrator,"The person who directs activities designed to ensure the LSST Project's compliance with all applicable laws, regulations and internal policies. The CQA reports directly to the LSST Project Manager. However, if appropriate and applicable, s/he also may directly report significant compliance issues and matters to the LSST Director and the NSF",Adm,,,G
 community software,"Software developed for and shared among a large group of relatively like-minded users (e.g. astronomers). Typically, but not necessarily, open source software and open development-based.",DM,,,G

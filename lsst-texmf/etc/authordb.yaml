@@ -926,6 +926,13 @@ authors:
     initials: Erin L.
     name: Carlson
     orcid: null
+  ceballor:
+    affil:
+    - RubinOps
+    altaffil: []
+    initials: Ross
+    name: Ceballo
+    orcid: null
   chandlerc:
     affil:
     - NAU
@@ -1093,6 +1100,13 @@ authors:
     altaffil: []
     initials: Luis
     name: Corral
+    orcid: null
+  cortes:
+    afill:
+    - NOIRLabC
+    altaffil: []
+    initials: Patricio
+    name: Cortes
     orcid: null
   coveykr:
     affil:
@@ -1347,6 +1361,13 @@ authors:
     initials: Michael
     name: Eracleous
     orcid: 0000-0002-3719-940X
+  estevesjh:
+    affil:
+    - Harvard-Physics
+    altaffil: []
+    initials: Johnny H.
+    name: Esteves
+    orcid: 0000-0003-4373-2386
   evansj:
     affil:
     - Harvard-CfA
@@ -1773,6 +1794,13 @@ authors:
     altaffil: []
     initials: Ron
     name: Harris
+    orcid: null
+  hascalld:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Diane
+    name: Hascall
     orcid: null
   hascallpa:
     affil:
@@ -4129,6 +4157,13 @@ authors:
     initials: Francoise
     name: Virieux
     orcid: null
+  voutsinass:
+    affil:
+    - RubinObs
+    altaffil: []
+    initials: Stelios
+    name: Voutsinas
+    orcid: 0009-0003-4290-2942
   vucinat:
     affil:
     - RubinObs
