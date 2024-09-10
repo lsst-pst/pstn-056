@@ -55,20 +55,22 @@ $y$	 &	0.0	 &	$+$0.03  &	$\qquad$ &	$+$0.07  &	$+$0.10\\
 }\label{tab:dm5Agx3}
 \end{longtable}
 
-The SCOC reviewed the largely positive impact of the new throughput on science cases: nearly all MAFs responded positively to the increase in survey depth with some metrics showing improvements as large as 10\% (\eg\ Parallax uncertainty, see \autoref{fig:parallax} (see also \autoref{fig:heatmap} and note the significant improvements between \baseline{3.2} and \baseline{3.3} when the new filter transmission curves were introduced). 
-
 \begin{figure}
     \centering
     \begin{overpic}[width=0.8\textwidth]{figures/parallax.png}
         	\put(50,30){\color{lsstblue}\huge DRAFT}
     \end{overpic}
     %\includegraphics[width=0.8\textwidth]{figures/parallax.png}
-\caption{Gains in the metric tracking LSST's median parallax uncertainty at magnitude $r=24$, a standard metric that measures a LSST \citetalias{LPM-17} system requirement for different $\mathrm{baseline}$ \opsim s, from \baseline{1.x} through \baseline{3.3}, the first simulation with updated system throughput  reflectivity from the 3xAg mirror coating. The improvements in parallax uncertainty between $v3.2$ and $v3.3$ \opsim\ come from the change in throughput and added depth in all bands bluer than $u$. Similar improvements are seen in proper notion uncertainty.}
+\caption{Gains in the metric tracking LSST's median parallax uncertainty at magnitude $r=24$, a standard metric that measures a LSST \citetalias{LPM-17} system requirement for different $\mathrm{baseline}$ \opsim s, from \baseline{1.x} through \baseline{3.3}, the first simulation with updated system throughput  reflectivity from the 3xAg mirror coating. The improvements in parallax uncertainty between $v3.2$ and $v3.3$ \opsim\ come from the change in throughput and added depth in all bands bluer than $u$. Similar improvements are seen in proper motion uncertainty.}
 \label{fig:parallax}
 \end{figure}
 
+The SCOC reviewed the largely positive impact of the new throughput on science cases: nearly all MAFs responded positively to the increase in survey depth with some metrics showing improvements as large as 10\% (\eg\ Parallax uncertainty, see \autoref{fig:parallax} and some time domain metrics improving by $\sim20\%$ (Kilonovae and SN Ia metric, see also \autoref{fig:heatmap} and note the significant improvements between \baseline{3.2} and \baseline{3.3} when the new filter transmission curves were introduced). 
+
+
+
 However, the SCOC understands that the throughput loss in $u$-band ($\sim30\%$  loss in coadded depth) would negatively impact science cases including Photo-z, studies of the Milky Way halo, Lyman Break Galaxies (LBGs, identified as $u$-band dropouts at redshift $z\sim3$), and more. While the overwhelming majority of the MAF metrics available to the SCOC responded positively to the updated throughput, we are aware, as always, that these may not provide an exhaustive picture of the science outcomes. Therefore, guided by experts in the community, we explored ways to reduce the $u$ band magnitude decrease while preserving the benefit of increased throughput in redder bands. 
-We tracked the performance of Photo-z, as characterized in \citealt{Graham_2017}, by assessing the variance and bias in \pz\ at redshifts $z\lesssim{3}$. \pz\ is sensitive to $u$ band depth at redshift $z\geq 2$ due to decrease power to identify Lyman break galaxies photometrically. We expect that recovering \pz\ performance is a good indicator of recovering performance for other science cases sensitive to $u$ band depth for which we do not have detailed metrics. \pz\ performance, along with a large set of MAFs, were run against a set of \opsim s  that progressively changed the exposure time and the number of exposures in $u$-band\footnote{\url{https://community.lsst.org/t/release-of-v3-4-simulations/8548}}. 
+We tracked the performance of Photo-z, as characterized in \citealt{Graham_2017}, by assessing the variance and bias in \pz\ at redshifts $z\lesssim{3}$ (\autoref{fig:pz}). \pz\ is sensitive to $u$ band depth at redshift $z\geq 2$ due to decrease power to identify Lyman break galaxies photometrically. We expect that recovering \pz\ performance is a good indicator of recovering performance for other science cases sensitive to $u$ band depth for which we do not have detailed metrics. \pz\ performance, along with a large set of MAFs, were run against a set of \opsim s  that progressively changed the exposure time and the number of exposures in $u$-band (see \autoref{fig:uband})\footnote{\url{https://community.lsst.org/t/release-of-v3-4-simulations/8548}}. 
 
 {\bf The SCOC recommends:} 
 
@@ -79,7 +81,7 @@ We tracked the performance of Photo-z, as characterized in \citealt{Graham_2017}
 \end{itemize}
 
 
-This roughly restores the $u$ band depth of LSST in \baseline{3.0} with minimal impact on LSST science metrics. As a science case that is representative of those sensitive to $u$-band depth, these changes recover performance on \pz\ at redshift $z\sim2$, where the impact of the $u$-band throughput loss was most significant while maintaining the performance improvement on \pz\ at low redshift afforded by the increased depth of LSST in all other bands. Furthermore, these changes minimally impact other science cases tracked by MAFs. 
+This roughly restores the $u$ band depth of LSST in \baseline{3.0} with minimal impact on LSST science metrics. As a science case that is representative of those sensitive to $u$-band depth, these changes recover performance on \pz\ at redshift $z\sim2$, where the impact of the $u$-band throughput loss was most significant, while maintaining the performance improvement on \pz\ at low redshift afforded by the increased depth of LSST in all other bands. Furthermore, these changes minimally impact other science cases tracked by MAFs. 
 
 Because more science cases generally respond better to increasing the number of images, over increasing the exposure time to achieve the same depth, the added $u$-band time should be obtained by decreasing (minimally) the exposure time in other bands, rather than decreasing the number of images.
 
@@ -93,9 +95,10 @@ Management team.}
     \end{overpic}
 %\includegraphics[height=0.30\textwidth]{figures/photo-z.png}
 
-\caption{Effect of changes of $u$-band 10-year depth on \pz\ Roubst Standard deviation as a function of redshift $z$ as measured in \cite{Graham_2017}. The dashed line represents the \citetalias{LPM-17} requirements on \pz. The black solid curve is the \baseline{3.2}, the latest baseline before the filter transmission curves were updated in the Rubin simulation system, the colored curves represent the \pz\ Robust Standard Deviation varying $u$-band exposure time between $30\leq u_{expt} \leq45$~seconds and number of exposures in $u$ band between $1.0\times ns \leq N_u \leq 1.1\times ns$ where $ns$ is the number of $u$-band exposures in \baseline{3.2}. Note that, with the caveat that sampling uncertainties are large at $z>1.5$, we note an improvement in \pz at low $z$ associated with increased depth in bands redder than $u$, but a degradation at $z>1.5$. A similar impact is seen in \pz\ bias.}
-
+\caption{Effect of changes of $u$-band 10-year depth on \pz\ Roubst Standard deviation as a function of redshift $z$ as measured in \cite{Graham_2017}. The dashed line represents the \citetalias{LPM-17} requirements on \pz. The black solid curve is the \baseline{3.2}, the latest baseline before the filter transmission curves were updated in the Rubin simulation system, the colored curves represent the \pz\ Robust Standard Deviation varying $u$-band exposure time between $30\leq u_{expt} \leq45$~seconds and number of exposures in $u$ band between $1.0\times ns \leq N_u \leq 1.1\times ns$ where $ns$ is the number of $u$-band exposures in \baseline{3.2}. Note that, with the caveat that sampling uncertainties are large at $z>1.5$, with the 3xAg transmission curves we note an improvement in \pz\ at low $z$ associated with increased depth in bands redder than $u$, but a degradation at $z>1.5$. The current filter balance recommendation (closely reflected by the red line in this plot) more than recovers performance at high $z$ while preserving the low $z$ gains. A similar impact is seen in \pz\ bias.}
+\label{fig:pz}
 \end{figure}
+
 \begin{figure}
 \centering
     \begin{overpic}[width=0.8\textwidth]{figures/u_band_scoc_heatmap.png}
@@ -103,7 +106,7 @@ Management team.}
     \end{overpic}
 %\includegraphics[width=0.7\textwidth]{figures/u_band_scoc_heatmap.png}
 \caption{ A standard set of science and system MAFs metrics as a function of changing exposure time ($27\leq u_{expt}\leq 45$ seconds) and fraction of exposures in $u$ band ($0.9\times ns\leq N_u \leq1.2\times ns$). The metrics are normalized with respect to a simulation with $u_{expt}$= 30 seconds and $N_u = 1.0\times ns$. Three additional columns on the left show: \texttt{v\_3.2} (\baseline{3.2}, pre-filter-throughput update, notably generally worse) and \texttt{v3.3} (\baseline{3.3}, which follows the same observing strategy as to \baseline{3.2} but includes throughput updates) and $u~38s~1*$ where the exposure time of all other bands is adjusted to compensate for extra time spent in $u$ (whereas in all other simulations shown in this plot the exposure time is kept at 30 seconds). The SCOC indeeds recommends an adjustment of the exposure in all bands (29.2 seconds instead of 30 seconds) and this is implemented in all simulations starting with \texttt{v3.5}.}
-
+\label{fig:uband}
 \end{figure}
 \FloatBarrier
 
@@ -135,7 +138,7 @@ be designed to ensure coverage of time scales in the hours-to-one-day range by c
 \end{quote}
 
 %While not designed for this purpose, t
-The implementation of the 0.9 strength, two-sky-areas rolling with four cycles (\baseline{3.2}-\baseline{3.5} improved coverage at 24-48 hours (see figure \autoref{fig:rolling_sampling}) over the \baseline{3.0} that accompanied \citetalias{PSTN-055}.
+The implementation of the 0.9 strength, two-sky-areas rolling with four cycles (\baseline{3.2}-\baseline{3.5}) improved coverage at 24-48 hours (see figure \autoref{fig:rolling_sampling}) over the \baseline{3.0} that accompanied \citetalias{PSTN-055}.
 
 
 \begin{figure}
@@ -220,7 +223,7 @@ The subsequent efforts of the SCOC and scientific community have been focused on
 
 One feature of the \baseline{3.0} (\citetalias{PSTN-055}) survey in the Plane is that it left a high-visit ``blob'' centered around a Galactic longitude of $l=+45$ surrounded by a lower visit area. This resulted from a previous candidate survey design that included high-visit pencil beams\footnote{In a subset of previous candidate survey designs, ``pencil beams" were a series of 20 high-visit single pointings distributed in galactic longitude with the goal of ensuring the survey sampled a range of stellar environments.} at varying Galactic longitudes along the Plane and considered stellar density, but was not due to any other specific science goal in this region. Visits centered around this high-declination blob would necessarily have to occur at high airmass, and would additionally be separated from other high-visit areas, reducing survey efficiency.
 
-{\bf The SCOC recommends redistributing the excess visits in the ``blob'' centered around a Galactic longitude of $l=+45$ to cover a low-visit ``barrier'' at $l=+335$ in the Plane and at the border of the Plane and Bulge. This change would give continuous longitude coverage along the Plane from a longitude of $l=+30$ down through $l=+280$ and boost metrics for time-domain science in the Bulge/Plane.}
+{\bf The SCOC recommends redistributing the  visits concentrated in the ``blob'' centered around a Galactic longitude of $l=+45$ to cover a low-visit ``barrier'' at $l=+335$ in the Plane and at the border of the Plane and Bulge. This change would give continuous longitude coverage along the Plane from a longitude of $l=+30$ down through $l=+280$ and boost metrics for time-domain science in the Bulge/Plane.}
 
 
 \begin{figure}
