@@ -1,14 +1,19 @@
 
-\section{Open questions from PSTN-055} \label{sec:openquestions}
+\clearpage
+
+\section{Resolution of recommendations left incomplete in PSTN-055} \label{sec:openquestions}
 
 \subsection{Swapping filters on the filter wheel}\label{sec:filterswap}
-The filter system at Rubin allows five of the six filters to be mounted at the same time on the carousel. Filters at the edge of the system transmission will be swapped in and out of the filter wheel throughout the lunar cycle. In \citetalias{PSTN-055} Section 4 the SCOC recommended further investigation of which filters to swap: 
+The filter system at Rubin allows five of the six filters ($u$, $g$, $r$, $i$, $z$, and $y$) to be mounted at the same time on the carousel. 
+%Filters at the edge of the system transmission will be swapped in and out of the filter wheel throughout the lunar cycle. 
+Filters will be swapped in and out of the filter wheel based on sky brightness due to lunar phase. 
+In \citetalias{PSTN-055} Section 4 the SCOC recommended further investigation of which filters to swap: 
 \begin{quote}{[\citetalias{PSTN-055}] ``The SCOC recommends that the investigation of the filter swapping schemes on the filter wheel continue. After the November 2022 SCOC workshop, a few experiments in swapping $u$, $z$, and $y$ instead of $u$ and $z$ were implemented in \texttt{v2.99} simulations. More work is needed to understand the impacts of this decision on the DDFs as well as on the WFD. Filter pairing prescriptions for the observation pairs should also be explored in some more depth.''}
 \end{quote}
 
- Simulations prior to \texttt{v3.0} swapped the $z$ with $u$ based on lunation, as moonlight is blue and impacts observations in $u$-band most significantly. Simulations tagged \texttt{v3.2}  experimented with  swapping $u$ with $z$ or $y$, including putting all of $u$, $z$, and $y$ on rotation. Increasing the availability of $z$ on the filter wheel produced significant improvements in supernova (SN) cosmology, especially in the Deep Drilling Fields (DDFs), while swapping two filters, instead of three, improves coverage at short time scales in filters through $z$ (see \autoref{fig:swapping}). 
+ Simulations prior to \texttt{v3.0} swapped the $z$ with $u$ based on lunation, as scattered moonlight is blue and impacts observations in $u$-band most significantly. Simulations tagged \texttt{v3.2}  experimented with  swapping $u$ with $z$ or $y$, including putting all of $u$, $z$, and $y$ on rotation. Increasing the availability of $z$ on the filter wheel produced significant improvements in supernova (SN) cosmology, especially in the Deep Drilling Fields (DDFs), while swapping two filters, instead of three, improves coverage at short time scales in filters through $z$ (see \autoref{fig:swapping}). Keeping the $g$, $r$, $i$, and $z$ filters in the camera at all times also eliminates the likelihood of damaging these critical filters during filter swaps.
  
-{\bf The SCOC recommends swapping $u$- and $y$-band according to the moon phase. This produces benefits for SN cosmology while preserving coverage on short timescales. This recommendation is implemented starting in \baseline{3.2}}.
+{\bf The SCOC recommends swapping $u$- and $y$-band according to the moon phase. Having the $z$ filter always available produces benefits for SN cosmology while preserving coverage on short timescales. This recommendation is implemented starting in \baseline{3.2}}.
 
 \begin{figure}
   \centering
@@ -18,9 +23,9 @@ The filter system at Rubin allows five of the six filters to be mounted at the s
 %\includegraphics[width=0.5\textwidth]{figures/filter_swap_linear.png}
 %\includegraphics[width=0.75\textwidth]{figures/filter_swap_KNe.png}
 %\includegraphics[width=0.45\textwidth]{figures/filter_swap_SNIa.png}
-\caption{Swapping a filter out of the camera has two effects: it adds a gap for the period of time while it's unavailable, and it increases the cadence in that bandpass during the time it is in the camera. Gaps in $z$ band are particularly bad for SNIa detections, an effect which is magnified for Deep Drilling Fields. %Increases in $z$ band cadence can be beneficial for KNe detection, if repeated observations in the same filter within a rapid timeframe is the criteria. 
+\caption{Swapping a filter out of the camera has two effects: it adds a gap for the period of time while it is unavailable, and it increases the cadence in that bandpass during the time it is in the camera. Gaps in $z$-band are particularly problematic for high-redshift SNIa detections, an effect which is magnified in the Deep Drilling Fields. %Increases in $z$ band cadence can be beneficial for KNe detection, if repeated observations in the same filter within a rapid timeframe is the criteria. 
 Swapping three filters ($u$ with alternating $z$ and $y$) increases the length of time gaps between sampling in the same filter, decreasing performance for hours-days transients.
-Swapping $u$ with $y$ while leaving $z$ mounted on the filter wheel has an overall positive science impact, balancing the  needs of rapid transient science with SNIa science in the Deep Drilling Fields. }
+Swapping $u$ with $y$ while leaving $z$ mounted on the filter wheel has an overall positive science impact, balancing the needs of rapid transient science with SNIa science in the Deep Drilling Fields. }
 \label{fig:swapping}
 \end{figure}
 
@@ -28,28 +33,28 @@ Swapping $u$ with $y$ while leaving $z$ mounted on the filter wheel has an overa
 \subsection{Filter Balance}\label{sec:filterbalance}
  In \citetalias{PSTN-055}, the SCOC confirmed the recommendation on the filter balance as implemented starting in \baseline{2.0} but left the possibility that:
   
- \begin{quote}[\citetalias{PSTN-055}] ``While the SCOC recommends the filter balance as implemented starting in \texttt{baseline\v2.0} should not be changed, it is possible that rebalancing the
+ \begin{quote}[\citetalias{PSTN-055}] ``While the SCOC recommends the filter balance as implemented starting in \baseline{2.0} should not be changed, it is possible that rebalancing the
 exposure time to compensate for performance and throughput in some filters as compared to others or shortening exposures in filters where the throughput exceeds expectations enabling the collection of more images in that filter (or overall) would lead to
 enhanced LSST science. The SCOC cannot finalize this recommendation at this time due to
 missing information about the characteristics of the system-as-built.''
 \end{quote}
 
-Simulations of the survey strategy up to and including \baseline{3.2} use throughput curves assuming mirror coating as Al-Ag-Al respectively for M1-M2-M3. Conversely, the plan to coat the mirrors was updated in 2023 to Ag-Ag-Ag (or 3xAg), which leads to a $\sim15-20\%$ increase in survey efficiency compared to Al-Ag-Al by increasing throughput in all bands redder than $u$, and bringing throughput closer to the design goals as stated in \citetalias{LPM-17}.\footnote{\url{https://community.lsst.org/t/rubin-sim-v1-3-released/7937} and \url{https://github.com/lsst-pst/syseng_throughputs/blob/main/notebooks/SilverVsAluminum.ipynb}.}  \autoref{tab:dm5Agx3} shows the magnitude limit changes associated with coating.  3xAg coating increases sensitivity in all LSST bands from $g$ to $y$, but it decreases the throughput in $u$.  As of \baseline{3.3}, all \opsim\ simulations include the updated expected throughput.
+Simulations of the survey strategy up to and including \baseline{3.2} use throughput curves assuming mirror coating as Al-Ag-Al respectively for M1-M2-M3. The plan to coat the mirrors was updated in 2023 to Ag-Ag-Ag (or 3xAg), which leads to a $\sim15-20\%$ increase in survey efficiency compared to Al-Ag-Al by increasing throughput in all bands redder than $u$, and bringing throughput closer to the design goals as stated in \citetalias{LPM-17}.\footnote{\url{https://community.lsst.org/t/rubin-sim-v1-3-released/7937} and \url{https://github.com/lsst-pst/syseng_throughputs/blob/main/notebooks/SilverVsAluminum.ipynb}.}  \autoref{tab:dm5Agx3} shows the magnitude limit changes associated with the two different coatings for both detector types in the camera.  3xAg coating increases sensitivity in all LSST bands from $g$ to $y$, but it decreases the throughput in $u$.  As of \baseline{3.3}, all \opsim\ simulations include the updated expected throughput.
 
-\begin{longtable}{lcccc}
+\begin{longtable}{lccccc}
  \\\hline
-& Al-Ag-Al E2V &	Al-Ag-Al ITL &		Ag-Ag-Ag E2V &		Ag-Ag-Ag ITL\\
+& Al-Ag-Al E2V &	Al-Ag-Al ITL & &		Ag-Ag-Ag E2V &		Ag-Ag-Ag ITL\\
 \hline
-$u$	 &	0.0	 &	-0.06 &		-0.21 &		-0.27\\
-$g$	 &	0.0	 &	-0.04 &		0.06 &		0.02\\
-$r$	 &	0.0	 &	-0.05 &	    0.10 &	 0.05\\
-$i$	 &	0.0	 &	-0.02 &		0.13 &		0.12\\
-$z$	 &	0.0	 &	0.01  &		0.15  &		0.15\\
-$y$	 &	0.0	 &	0.03  &		0.07  &		0.10\\
-\caption{Magnitude limit change, compared to expected magnitude limit with E2V chips coated with Al-Ag-Al. Note: values are reported for chips acquired by two different filter vendors as E2V and ITL for both coating schemes. Positive values indicate deeper limiting magnitudes.
+$u$	 &	0.0	 &	$-$0.06 &	$\qquad$ &	$-$0.21 &   $-$0.27\\
+$g$	 &	0.0	 &	$-$0.04 &	$\qquad$ &	$+$0.06 &	$+$0.02\\
+$r$	 &	0.0	 &	$-$0.05 &	$\qquad$ &   $+$0.10 &	$+$0.05\\
+$i$	 &	0.0	 &	$-$0.02 &	$\qquad$ &	$+$0.13 &	$+$0.12\\
+$z$	 &	0.0	 &	$+$0.01  &	$\qquad$ &	$+$0.15  &	$+$0.15\\
+$y$	 &	0.0	 &	$+$0.03  &	$\qquad$ &	$+$0.07  &	$+$0.10\\
+\caption{Magnitude limit change, compared to expected magnitude limit with E2V chips coated with Al-Ag-Al. Note: values are reported for chips acquired by two different detector vendors as E2V and ITL for both coating schemes. Positive values indicate deeper limiting magnitudes.
 }\label{tab:dm5Agx3}
 \end{longtable}
-The SCOC reviewed the largely positive impact of the new throughput on science cases: nearly all MAFs responded positively to the increase in survey depth with some metrics showing improvements as large as 10\% (\eg\ Parallax uncertainty, see \autoref{fig:parallax}, see also \autoref{fig:heatmap} and note the significant improvements between \baseline{3.2} and \baseline{3.3} when the new filter transmission curves were introduced). 
+The SCOC reviewed the largely positive impact of the new throughput on science cases: nearly all MAFs responded positively to the increase in survey depth with some metrics showing improvements as large as 10\% (\eg\ Parallax uncertainty, see \autoref{fig:parallax}; see also \autoref{fig:heatmap} and note the significant improvements between \baseline{3.2} and \baseline{3.3} when the new filter transmission curves were introduced). 
 
 \begin{figure}
     \centering
@@ -69,13 +74,13 @@ We tracked the performance of Photo-z, as characterized in \citealt{Graham_2017}
 \begin{itemize} 
 \item {\bf an increase of the exposure time in $u$-band to 38 seconds per visit}
 \item {\bf an increase of the number of $u$-band visits of 10\% compared to \baseline{3.0}}
-\item {\bf an identical decrease of 0.8 second exposure time in all other bands to compensate for the added time in $u$-band.} 
+\item {\bf an identical decrease of 0.8 second exposure time per visit in all other bands to compensate for the added time in $u$-band.} 
 \end{itemize}
 
 
 This roughly restores the $u$ band depth of LSST in \baseline{3.0} with minimal impact on LSST science metrics. As a science case that is representative of those sensitive to $u$-band depth, these changes recover performance on \pz\ at redshift $z\sim2$, where the impact of the $u$-band throughput loss was most significant while maintaining the performance improvement on \pz\ at low redshift afforded by the increased depth of LSST in all other bands. Furthermore, these changes minimally impact other science cases tracked by MAFs. 
 
-Since more science cases generally respond better to increasing the number of images, over increasing the exposure time to achieve the same depth, the added $u$-band time should be obtained by decreasing (minimally) the exposure time in other bands, rather than decreasing the number of images.
+Because more science cases generally respond better to increasing the number of images, over increasing the exposure time to achieve the same depth, the added $u$-band time should be obtained by decreasing (minimally) the exposure time in other bands, rather than decreasing the number of images.
 
 \textbf{ We note that this recommendation is subject to ongoing feasibility studies by the Rubin Data 
 Management team.}
@@ -102,21 +107,25 @@ Management team.}
 \FloatBarrier
 
 \subsection{Rolling}\label{sec:rolling}
-In a rolling strategy, instead of distributing visits uniformly on the WFD footprint, the sky is split into regions that alternate high- and low-intensity monitoring. In \citetalias{PSTN-055}, the SCOC recommended the implementation of a rolling strategy for the LSST WFD at a strength of 0.9\footnote{This number represents the fraction of the visits that the scheduler attempts to place in the high-activity rolling region. However, the resulting visit distribution is more uniform (75-80\% in high-activity regions, 25-20\% in low ones) due to competing requirements (\eg , filter balance, minimum number of observations per pointing per year in each filter to produce templates, weather, etc...)} 
+In a rolling strategy, instead of distributing visits uniformly on the WFD footprint, the sky is split into regions that alternate high- and low-intensity monitoring. In \citetalias{PSTN-055}, the SCOC recommended the implementation of a rolling strategy for the LSST WFD at a strength of 0.9\footnote{This number represents the fraction of the visits that the scheduler attempts to place in the high-activity rolling region. However, the resulting visit distribution is more uniform (75--80\% in high-activity regions, 25--20\% in low ones) due to competing requirements (\eg , filter balance, minimum number of observations per pointing per year in each filter to produce templates, weather, etc...)} 
 with the sky split into two rolling regions constituted by four longitudinal stripes. The primary drivers for this recommendation are time-domain science including the exploration of the transient and variable sky and SN cosmology. Rolling as described decreases the median time-gaps compared to a no-rolling implementation of LSST:
-distributing the $\sim$800 visits per pointing evenly into 10 seasons results in an median revisit time per pointing of about 4.5 nights, while rolling can increase the cadence on the areas of sky closer to 2.5 nights.\footnote{The reader is reminded that each pointing receives two or three visits per night. The time gaps reported here are for inter-night observations.}
+distributing the $\sim$800 visits per pointing evenly into 10 seasons results in a median revisit time per pointing of about 4.5 nights, while rolling can increase the cadence on the areas of sky closer to 2.5 nights.\footnote{The reader is reminded that each pointing receives two or three visits per night. The time gaps reported here are for inter-night observations.}
 
- However, concerns were raised by the DESC, and seconded by other groups such as the Galaxies SC, regarding the lack of uniformity in the distribution of depths across the survey at intermediate years between 1 and 10 compared to a no-rolling strategy \citep[see discussion in][which noted this as a potential future concern before the adoption of a rolling cadence as the baseline]{2022ApJS..259...58L}.  These concerns highlighted the negative impact that rolling induces on the cosmological analysis conducted with static-sky probes due to a decreased uniformity of the data releases, which has been shown to cause several significant issues for cosmological large-scale structure analyses \citep[\eg ,][]{2022PhRvD.105b3520A,2023JCAP...07..044B}.  
+ However, concerns were raised by the DESC, and seconded by other groups such as the Galaxies SC, regarding the lack of uniformity in the distribution of depths across the survey in planned yearly data releases for intermediate years between 1 and 10 compared to a no-rolling strategy \citep[see discussion in][which noted this as a potential future concern before the adoption of a rolling cadence as the baseline]{2022ApJS..259...58L}.  These concerns highlighted the negative impact that rolling induces on the cosmological analysis conducted with static-sky probes due to a decreased uniformity of the data releases, which has been shown to cause several significant issues for cosmological large-scale structure analyses \citep[\eg ,][]{2022PhRvD.105b3520A,2023JCAP...07..044B}.  
  This uniformity challenge could be addressed after data collection by selecting and limiting the number of images going into a data release per field (including these data in future data releases) to achieve higher uniformity or by a ``renoising'' step. These data management solutions are at the moment unscoped and do not fall under the current requirements of the Rubin DM deliverables.
 
- \begin{quote}
+The official Phase 2 recommendation stated that:
+\vspace{-0.5cm}
+\begin{quote}
      [\citetalias{PSTN-055}] ``The current SCOC recommendation is to implement a rolling cadence with a half-sky rolling scheme and a 0.9 rolling weight. However, rolling impacts the uniformity of static data releases which, as experts in the community have highlighted, is necessary for static sky science in general and cosmology in particular. This issue may be resolved or mitigated at the software level in the creation of coadds and catalogs, rather than at the scheduler level. The community should specify the desired and necessary requirements for uniformity to enable the exploration of data processing solutions to this problem. Depending on the feasibility of a solution to ensure sufficient uniformity, the SCOC recommendation on rolling may be re-evaluated.'' 
 
  \end{quote}
 
- With the goal of quantifying the necessary uniformity to enable cosmological results at certain key data releases\footnote{These intermediate releases were selected because they enable equally-spaced time intervals between new datasets for comprehensive static science analysis: years 1, 4, 7, and 10 corresponding to DR2, DR5, DR8, DR11.}, DR5 and DR8, as well as identifying solutions that enable rolling (at the strength recommended in \citetalias{PSTN-055}) while increasing the uniformity of key data releases, a Uniformity Task Force developed alternative rolling implementations. {\it Uniform rolling}, implements interruptions of rolling before specific data releases to increase the uniformity of those releases and recover an acceptable level of uniformity at key years -- see Figs.~\ref{fig:stripiness} and~\ref{fig:uniform-rolling}.  It was found that uniform rolling permits the full survey area to be used for cosmological analysis at years 4 and 7, whereas in previous rolling versions, approximately 35\% of the cosmological constraining power\footnote{Here we quantify cosmological constraining power through emulated forecasts of combined constraints from cosmological weak lensing and large-scale structure measurements \citep{2022ApJS..259...58L}.  The constraints assume a $w_0 w_a$CDM cosmological model, with $w_0$ and $w_a$ entering as two parameters in the dark energy equation of state.  The constraining power is quantified through the area of the uncertainty contours in the $(w_0, w_a)$ part of parameter space, marginalizing over other cosmological parameters and systematic uncertainties -- then taking the inverse of that area (so that higher values mean lower uncertainty, i.e., tighter cosmological constraints).  However, this can be considered more generally as a proxy for how well we are measuring cosmological structure growth, translating into tighter constraints on the amplitude of matter fluctuations if a $\Lambda$CDM cosmological model is assumed.} was lost at those years due to the need for area cuts. 
+ With the goal of quantifying the necessary uniformity to enable cosmological results at certain key data releases,\footnote{These intermediate releases were selected because they enable equally-spaced time intervals between new datasets for comprehensive static science analysis: years 1, 4, 7, and 10 corresponding to DR2, DR5, DR8, DR11.} DR5 and DR8, as well as identifying solutions that enable rolling (at the strength recommended in \citetalias{PSTN-055}) while increasing the uniformity of key data releases, a Uniformity Task Force developed alternative rolling implementations. 
+ 
+ {\it Uniform rolling} implements interruptions of rolling before specific data releases to increase the uniformity of those releases and recover an acceptable level of uniformity at key years---see Figs.~\ref{fig:stripiness} and~\ref{fig:uniform-rolling}.  It was found that uniform rolling permits the full survey area to be used for cosmological analysis at years 4 and 7, whereas in previous rolling versions, approximately 35\% of the cosmological constraining power\footnote{Here we quantify cosmological constraining power through emulated forecasts of combined constraints from cosmological weak lensing and large-scale structure measurements \citep{2022ApJS..259...58L}.  The constraints assume a $w_0 w_a$CDM cosmological model, with $w_0$ and $w_a$ entering as two parameters in the dark energy equation of state.  The constraining power is quantified through the area of the uncertainty contours in the $(w_0, w_a)$ part of parameter space, marginalizing over other cosmological parameters and systematic uncertainties -- then taking the inverse of that area (so that higher values mean lower uncertainty, i.e., tighter cosmological constraints).  However, this can be considered more generally as a proxy for how well we are measuring cosmological structure growth, translating into tighter constraints on the amplitude of matter fluctuations if a $\Lambda$CDM cosmological model is assumed.} was lost at those years due to the need for area cuts. 
 
-We note that rolling can be implemented with at most four rolling cycles (that is, starting rolling in Y2 and ending rolling in Y10) where a cycle is defined as a pair of two years where the high- and low-intensity regions are swapped. Uniform rolling requires limiting rolling to three cycles. Primarily this affects science sensitive to timescales of $\sim24-48$ hours \footnote{Shorter time scales are primarily covered by observations in triplets as discussed in \citetalias{PSTN-055}.}. 
+We note that over the 10-year LSST, the envisioned two-region rolling strategy can be implemented with at most four rolling cycles (that is, starting rolling in Y2 and ending rolling in Y10) where a cycle is defined as a pair of two years, where the high- and low-intensity regions are swapped. Uniform rolling requires limiting rolling to three cycles. Rolling primarily benefits science sensitive to timescales of $\sim24-48$ hours.\footnote{Shorter time scales are primarily covered by observations in triplets as discussed in \citetalias{PSTN-055}.} 
 We note that these time scales had been identified as sensitive and requiring additional improvements in \citetalias{PSTN-055} within the recommendation on rolling (PSTN-055 Section 2.4.1): 
 
 \begin{quote}
@@ -124,7 +133,8 @@ We note that these time scales had been identified as sensitive and requiring ad
 be designed to ensure coverage of time scales in the hours-to-one-day range by carefully tuning survey parameters in combination. Performing three visits per night by default is not recommended, but a combination of preferentially pushing a third visit to the following night [...] and requesting a third visit within a night once every several nights ($\sim 1$ week) would achieve this goal.'' 
 \end{quote}
 
-While not designed for this purpose, the implementation of the 0.9 strength, two-sky-areas rolling with four cycles (\baseline{3.2} and later) improved coverage at 24-48 hours (see figure \autoref{fig:rolling_sampling}).
+%While not designed for this purpose, t
+The implementation of the 0.9 strength, two-sky-areas rolling with four cycles (\baseline{3.2}-\baseline{3.5} improved coverage at 24-48 hours (see figure \autoref{fig:rolling_sampling}) over the \baseline{3.0} that accompanied \citetalias{PSTN-055}.
 
 
 \begin{figure}
@@ -141,14 +151,14 @@ While not designed for this purpose, the implementation of the 0.9 strength, two
     \label{fig:rolling_sampling}
 \end{figure}
 
-The SCOC recognizes the positive impact this rolling implementation has on static cosmological and extragalactic probes and considers this a promising solution for the uniformity concerns raised in \citetalias{PSTN-055}, with limited impact on time-domain probes. However, this implementation of rolling is a significant and new departure from earlier implementations, and the number of cycles of rolling had not been previously explicitly discussed as a parameter in the survey strategy. Furthermore, the current Uniform Rolling implementation requires rolling to start early in Y2 (in the current implementations rolling starts on survey day $\leq 400$) but, as discussed in \citetalias{PSTN-055}, rolling shall not start until sufficient sky coverage has been achieved to enable proper photometric calibration.%\footnote{\tbd{A discussion and references for "good enough" calibration should be added, see Eli 2023 PCW - @fed}} 
+Considering the above input for multiple science cases, the SCOC recognizes the positive impact that this rolling implementation (3-cycle {\it uniform rolling}) has on static cosmological and extragalactic probes and considers this a promising solution for the uniformity concerns raised in \citetalias{PSTN-055}, with limited detrimental impact on time-domain probes. However, this implementation of rolling is a significant and new departure from earlier implementations, and the number of cycles of rolling had not been previously explicitly discussed as a parameter in the survey strategy. Furthermore, the current Uniform Rolling implementation requires rolling to start early in Y2 (in the current implementations, rolling starts on survey day $\leq 400$) but, as discussed in \citetalias{PSTN-055}, rolling shall not start until sufficient sky coverage has been achieved to enable proper photometric calibration.%\footnote{\tbd{A discussion and references for "good enough" calibration should be added, see Eli 2023 PCW - @fed}} 
 
-For these reasons, the SCOC is not committing at this time to recommend any specific implementation of rolling, beyond confirming the strength 0.9 and two-region strategy. Since in all current implementations
-rolling does not begin until Y2, the SCOC intends to continue investigating rolling implementations and their impact throughout Y1, with the support of the community, and release a recommendation of how to implement rolling in its first annual recommendation ahead of Y2 of Operations. In particular, we intend to (1) investigate sensitivity to the outcomes of Y1, (2) ensure the community has time to evaluate the potential impacts of these changes that are not currently highlighted by our metrics, and (3) refine the uniform rolling implementation details.
+For these reasons, the SCOC is not committing at this time to recommend any specific implementation of rolling, beyond confirming the strength 0.9 and two-region strategy. Since in all current implementations,
+rolling does not begin until Y2, the SCOC intends to continue investigating rolling implementations and their impact throughout Y1, with the support of the community, and release a recommendation of how to implement rolling as part of its first annual recommendation ahead of Y2 of Operations. In particular, we intend to (1) investigate sensitivity to the outcomes of Y1, (2) ensure the community has time to evaluate the potential impacts of these changes that are not currently highlighted by our metrics, and (3) refine the uniform rolling implementation details.
 
-{\bf The SCOC recommends that the time domain community, particularly those interested in phenomena that have evolutionary time scales of hours-to-days, urgently quantifies the impact of the proposed uniform rolling compared to rolling in four cycles. For this purpose, while the baseline is implemented with 3-cycles uniform rolling, the Survey Strategy team has prepared v3.5 \opsim s  with different rolling implementations.}
+{\bf The SCOC recommends that the time domain community, particularly those interested in phenomena that have evolutionary time scales of hours-to-days, urgently quantifies the impact of the proposed uniform rolling compared to rolling in four cycles. For this purpose, while the baseline is implemented with 3-cycle uniform rolling, the Survey Strategy team has prepared \texttt{v3.6} \opsim s  with different rolling implementations.}
 
-{\bf Further, the SCOC reiterates the recommendation that Data Management scopes a plan for producing uniform data releases in DR5 and DR8 in addition to the standard data releases and that the cost of the development and storage of these additional data releases is scoped and shared with the scientific community.} Even if produced by the Rubin DM, uniform data releases will require the input (of the DESC and extragalactic science community at large) to develop the algorithm that will achieve sufficient uniformity. Understanding the cost of producing two additional {\it uniform} data releases is necessary to compare this cost to the scientific cost of three vs four cycles of rolling, to be measured by the community (see previous paragraph). In addition, if rolling cannot start early enough to interrupt rolling ahead of DR5 and DR8, this remains the only alternative solution currently identified to achieve sufficient uniformity. Sharing information on the cost of additional data releases will place the community in a position, if needed, to advocate and secure funding for this purpose.
+{\bf Further, the SCOC restates its recommendation that Data Management scopes a plan for producing uniform data releases in DR5 and DR8, in addition to the standard data releases, and that the cost of the development and storage of these additional data releases is scoped and shared with the scientific community.} Even if produced by the Rubin DM, uniform data releases will require the input of the DESC and extragalactic science community at large to develop the algorithm that will achieve sufficient uniformity. Understanding the cost of producing two additional {\it uniform} data releases is necessary to compare this cost to the scientific cost of three vs. four cycles of rolling, to be measured by the community (see previous paragraph). In addition, if rolling cannot start early enough to interrupt rolling ahead of DR5 and DR8, this remains the only alternative solution currently identified to achieve sufficient uniformity. Sharing information on the cost of additional data releases will place the community in a position, if needed, to advocate and secure funding for this purpose.
 
 The SCOC is thankful to the Uniformity Task Force, chaired by Rachel Mandelbaum, which provided invaluable contributions and analysis that led us to this recommendation.
 
@@ -184,7 +194,7 @@ The SCOC is thankful to the Uniformity Task Force, chaired by Rachel Mandelbaum,
     %\end{overpic}
     \includegraphics[width=0.3\linewidth]{figures/RollingUniform.png}
     \caption{
-Comparison of the depth of LSST at the end of Y4 (DR5) under different rolling strategies. The left plot shows the LSST number of visits map for a standard implementation of rolling at strength 0.9 in two sky regions designed as four longitudinal stripes. The center plot represents an implementation of LSST without rolling, for comparison and provides an upper limit to expected uniformity. The right plot shows the implementation of Uniform Rolling described in this section and implemented in \baseline{4.0}.}
+Comparison of the depth of LSST at the end of Y4 (DR5) under different rolling strategies. The left plot shows the LSST number of visits map for a standard implementation of rolling at strength 0.9 in two sky regions designed as four longitudinal stripes. The center plot represents an implementation of LSST without rolling, for comparison, and provides an upper limit to expected uniformity. The right plot shows the implementation of Uniform Rolling described in this section and implemented in \baseline{4.0}.}
     \label{fig:uniform-rolling}
 \end{figure}
 
@@ -192,15 +202,15 @@ Comparison of the depth of LSST at the end of Y4 (DR5) under different rolling s
 
 
 \subsection{Galaxy}\label{sec:galaxy}
-In \citetalias{PSTN-055} the SCOC identified areas of work needed to finalize the WFD survey strategy on the Galactic sky and special regions of interest to Galaxy science, including the Clouds and South Celestial Pole, which can be observed within the WFD but with different observing choices than the low-dust footprint, of primary interest for extragalactic science. This section includes updated recommendations on the Galactic footprint and its observing cadence, including whether rolling should be implemented (\autoref{sec:subG:footprint}), filter balance (\autoref{sec:subG:filterbalance}):
+In \citetalias{PSTN-055} the SCOC identified areas of work needed to finalize the WFD survey strategy on the Galactic sky and special regions of interest to Galaxy science, including the Clouds and South Celestial Pole, which can be observed within the WFD but with different observing choices than the low-dust footprint, of primary interest for extragalactic science. 
+
 \begin{quote}
     [\citetalias{PSTN-055}] ``The SCOC is not ready to finalize a recommendation for the
 filter balance in the Galactic Plane, or for a final Galactic Plane/Bulge footprint, or the rolling scheme to be implemented on the Galactic Plane. The SCOC will work with the SMWLV and TVS SCs to ascertain the best solutions for Galactic science on filter balance and footprint. These decisions should, however, not impact decisions relating to the WFD and the time spent collectively on Galactic regions should not change.
 Galactic Plane pencil-beam surveys need to be defined more clearly to assess if they would ultimately result in ``nano-surveys'', which will require a fraction of time too small to be optimized at this stage, or to evaluate the possibility of incorporating them in a final Galactic Footprint recommendation''.
+\end{quote}
 
-
-
-\end{quote}and special regions (\autoref{sec:subG:specialregions}).
+This section includes updated recommendations on the Galactic footprint and its observing cadence, including whether rolling should be implemented (\autoref{sec:subG:footprint}), filter balance (\autoref{sec:subG:filterbalance}), and special regions (\autoref{sec:subG:specialregions}).
 
 \subsubsection{Footprint and Time Distribution of Visits}\label{sec:subG:footprint}
 
@@ -223,7 +233,7 @@ One feature of the \baseline{3.0} (\citetalias{PSTN-055}) survey in the Plane is
     \end{overpic}
     %\includegraphics[width=0.7\textwidth]{figures/baseline_v3_6_10yrs_nvisits_galactic.png}
     %\includegraphics[width=0.3\linewidth]{figures/RollingUniform.png}
-    \caption{Comparison of the MW footprint (Galactic coordinates) as recommended in \citetalias{PSTN-055} and implemented in \baseline{3.0} and through v3.5 simulations and the refined footprint recommended in this document and implemented in \baseline{3.6} and later.}
+    \caption{Comparison of the MW footprint (Galactic coordinates) as recommended in \citetalias{PSTN-055} and implemented in \baseline{3.0} and through v3.5 simulations and the refined footprint recommended in this document and implemented in \baseline{3.6} and later.}\label{fig:gpfootprint}
 \end{figure}
 
 The SCOC recommends rolling on the low-dust WFD (see \autoref{sec:rolling}), where strips in declination alternate high- and low-intensity monitoring. %Rolling trades detection of transients for improved temporal coverage; for some classes of extragalactic transients, such as SN Ia to be used for cosmology, this tradeoff is strongly positive on net.
@@ -239,12 +249,12 @@ Finally, the SCOC recommends redistribution of a small number of Bulge visits to
 a central Bulge field overlapping the planned Roman Bulge survey area, with a goal of more continual monitoring to improve microlensing detection and characterization in this region that will be intensively surveyed by Roman during predetermined seasons.
 This recommendation was first implemented in \opsim\ \texttt{roman\_v3.3} and resulted in large improvements for some microlensing metrics, improvements for all microlensing metrics, and no significant negative impact on any other metrics. 
 
-{\bf The SCOC recommends that a visit plan consistent with this \texttt{roman\_v3.3} with the number of redistributed visits to be capped at that used in this simulation: in the current Roman field \opsim s the number of visit reallocated to the Roman field is $\sim1600$. However, the timing of the implementation of this augmented observing campaign needs to remain flexible at this time to respond to the as-of-yet to be finalized launch date of Roman and the scheduling of its surveys.}
+{\bf The SCOC recommends a visit plan consistent with this \texttt{roman\_v3.3} simulation, with the number of redistributed visits to be capped $\sim1600$, as in  \texttt{roman\_v3.3}. However, the timing of the implementation of this augmented observing campaign needs to remain flexible at this time to respond to the as-of-yet to be finalized launch date of Roman and the scheduling of its surveys.}
 
 
 \subsubsection{Galactic Filter Balance}\label{sec:subG:filterbalance}
 
-The filter balance in the Bulge in the current \baseline{3.4} already differs from that used for WFD: the primary difference is fewer visits in $y$, which are redistributed to bluer filters to better optimize Galactic science since $u$ and $g$ are vital for stellar characterization even in the presence of foreground dust. In WFD $y$ receives a large number of visits, comparable to $z$ and only slightly less than $r$ or $i$, while $g$ and especially $u$ receive fewer visits. Hence $y$, with its relatively low sensitivity, is the optimal choice for redistribution to bluer bands.
+The filter balance in the Bulge in the current \baseline{3.4} already differs from that used for WFD: the primary difference is fewer visits in $y$, which are redistributed to bluer filters to better optimize Galactic science since $u$ and $g$ are vital for stellar characterization even in the presence of foreground dust. In WFD $y$ receives a large number of visits, comparable to the number in $z$ and only slightly less than $r$ or $i$, while $g$ and especially $u$ receive fewer visits. Hence $y$, with its relatively low sensitivity, is the optimal choice for redistribution to bluer bands.
 
 Noting the relatively low sensitivity of the $y$ band, and its resulting negligible reddening advantage over $z$ even in dusty regions, the SCOC considered several simulations that redistributed additional visits in the dense regions of the Galaxy from $y$ to a combination of $z$, $g$, and $u$, while still recognizing the fundamental discovery potential of a multi-filter survey over a broad contiguous area. The main finding from these new simulations was that most existing metrics showed mixed or marginal changes, even where the relative number of visits in $u$ and $g$ substantially increased. The metrics considered included Galactic transients, young stars, detection of several classes of periodic variables, light curve gaps, as well as solar system metrics (since the ecliptic passes through this region).
 
@@ -254,13 +264,13 @@ However, the SCOC also welcomes input from the community whose science is affect
 
 \subsubsection{The Milky Clouds and South Celestial Pole}\label{sec:subG:specialregions}
 
-The scientific goals of the survey in the region of the Large and Small Milky Clouds (LMC and SMC, together MCs)\footnote{There is an effort underway to have the community avoid using the name Magellanic Clouds, as reasoned in \url{https://physics.aps.org/articles/v16/152}. Milky Clouds has been proposed as an alternative and has indeed been used in a number of settings. We adopt this name here to reflect the broad and inclusive reach of Rubin LSST.} and South Celestial Pole (SCP) differ somewhat from WFD. In particular, the major areas of focus of the survey of the main bodies of the LMC and SMC are microlensing and other variable/transient science. In the peripheries of the MCs, including the South Celestial Pole region, the central goal is to detect dwarf satellites and other low surface brightness stellar substructures.
+The scientific goals of the survey in the region of the Large and Small Milky Clouds (LMC and SMC, together MCs)\footnote{There is an effort underway to have the community avoid using the name Magellanic Clouds, as reasoned in \url{https://physics.aps.org/articles/v16/152}. Milky Clouds has been proposed as an alternative and has indeed been used in a number of settings. We adopt this name here to reflect the broad and inclusive reach of Rubin LSST.} and South Celestial Pole (SCP) differ somewhat from WFD. In particular, the major areas of focus of the survey in the main bodies of the LMC and SMC are microlensing and other variable/transient science. In the peripheries of the MCs, including the South Celestial Pole region, the central goal is to detect dwarf satellites and other low surface brightness stellar substructures.
 These goals are supported in the current baseline, as the MCs are covered with visit numbers like that in WFD, while the SCP region, only observable at relatively high airmass, has a low number of total visits, but sufficient to detect many potential dwarf satellites and substructures. However, the current baseline also adopts the WFD filter baseline in the MC and SCP regions, which may not be ideal for the stated goals.
 
 
 A number of simulations were considered that used an alternate filter balance for both the Clouds and the South Celestial Pole, moving visits out of $z$/$y$ and toward $u$/$g$ in both regions. These simulations show large improvements in metrics relevant to the detection of low surface-brightness dwarfs as well as some improvements in microlensing and variable star/transient metrics. 
 
-{\bf The SCOC recommends a bluer filter mix in these regions, bounded by the requirement that the increased number of dark-time visits in a relatively narrow range of right ascension does not affect other parts of the survey.} 
+{\bf The SCOC recommends a bluer filter mix in these regions, bounded by the requirement that the increased number of dark-time visits in a relatively narrow range of right ascension does not affect other areas of the survey.} 
 
 \begin{figure}
   \centering
@@ -268,7 +278,7 @@ A number of simulations were considered that used an alternate filter balance fo
         	\put(30,40){\color{lsstblue}\huge DRAFT}
   \end{overpic}%\includegraphics[width=0.32\linewidth]{figures/baseline_v3_6_10yrs_NVisits_i_band_HEAL_SkyMap.png}
   \includegraphics[width=0.32\linewidth]{figures/baseline_v3_6_10yrs_NVisits_z_band_HEAL_SkyMap.png}
-    \caption{The different filter balance in the LMC and SMC region compared to the rest of the WFD can be seen when comparing the number of exposures in $g$, and $i$, and $z$ at the end of the 10 year survey (the rectangular region near the SCP). These figures also demonstrate the bluer filter
+    \caption{The different filter balance in the LMC and SMC region compared to the rest of the WFD can be seen when comparing the number of exposures in $g$, and $i$, and $z$ at the end of the 10-year survey (the rectangular region near the SCP). These figures also demonstrate the bluer filter
     balance in the Milky Way region.}
     \label{fig:enter-label}
 \end{figure}
@@ -279,10 +289,6 @@ The SCOC is thankful to the Galaxy Survey Strategy Task Force, chaired by Jay St
 
 
 
-% \tbd{The SCOC is not ready to finalize a recommendation for the
-%filter balance in the Galactic Plane, or for a final Galactic Plane/Bulge footprint, or the rolling scheme to be implemented on the Galactic Plane. The SCOC will work with the SMWLV and TVS SCs to ascertain the best solutions for Galactic science on filter balance and footprint. These decisions should, however, not impact decisions relating to the WFD and the time spent collectively on Galactic regions should not change.
-%Galactic Plane pencil-beam surveys need to be defined more clearly to assess if they would ultimately result in ``nano-surveys'', which will require a fraction of time too small to be optimized at this stage, or to evaluate the possibility of incorporating them in a final Galactic Footprint recommendation.}
-
 \FloatBarrier
 
 
@@ -291,11 +297,11 @@ The SCOC is thankful to the Galaxy Survey Strategy Task Force, chaired by Jay St
 
 \subsection{Targets of Opportunity (ToO)}\label{sec:ToO}
  
-In \citetalias{PSTN-055} the SCOC recommended the implementatino of a ToO program that should:
+In \citetalias{PSTN-055} the SCOC recommended the implementation of a ToO program that should:
 
 \begin{quote}
     
-[\citetalias{PSTN-055}] ``be contained to $\leq$3\% of the LSST time. The SCOC recommends that Rubin organizes a workshop in 2023 to bring together members of the scientific community, members of Rubin Observatory (including observing and scheduler specialists, and Data Management specialists) and members of the SCOC to define the details of the implementation of the Rubin ToO program. This workshop should produce a document detailing recommendations for implementation, including suggestions for the questions outlined above, that the experts agree would accomplish the scientific goals of the program.''
+[\citetalias{PSTN-055}] ``be contained to $\leq$3\% of the LSST time. The SCOC recommends that Rubin organizes a workshop in 2023 to bring together members of the scientific community, members of Rubin Observatory (including observing and scheduler specialists, and Data Management specialists), and members of the SCOC to define the details of the implementation of the Rubin ToO program. This workshop should produce a document detailing recommendations for implementation, including suggestions for the questions outlined above, that the experts agree would accomplish the scientific goals of the program.''
 \end{quote}
 
 A meeting was organized in March 2024 (Rubin ToO 2024\footnote{\url{https://lssttooworkshop.github.io/images/Rubin_2024_ToO_workshop_final_report.pdf}}) with the explicit purpose of making a community recommendation for a Rubin ToO program within bounds previously established by the SCOC. After evaluating this community consensus report and considering simulations of its implementation, the SCOC finds that the impact on WFD science is generally small and that the proposed ToO programs have the potential to lead to important scientific results. 
@@ -303,7 +309,7 @@ A meeting was organized in March 2024 (Rubin ToO 2024\footnote{\url{https://lsst
  {\bf The SCOC recommends the implementation of a LSST ToO program as detailed in the community report} Rubin ToO 2024: 
 Envisioning the Vera C. Rubin Observatory LSST Target of Opportunity program
 \footnote{\url{https://docs.google.com/document/d/1WE4NGl3dFOVGo7lzpyG1fe_JiX9m-kLl5JYQkhu9iso/edit?usp=sharing}} \emph{(hereafter RubinToO2024) by the scientific community at large}. 
- %The recommended implementation has a small impact on the science metrics measuring the throughput of the LSST and has the potential to lead to important scientific results.
+
 
 The impact of including a ToO program as recommended in RubinToO2024 is shown in \autoref{fig:too}. In the current implementation, the program takes between 3\% and 4\% of the survey time. While this is slightly in excess of the recommendation in \citetalias{PSTN-055}, we are still improving the efficiency of the program's implementation, and the current implementation likely represent an upper limit as no triggered sequence is terminated due to reclassification of the event and/or as the transient is identified.
 
@@ -323,7 +329,7 @@ The current LIGO-Virgo-KAGRA (LVK) GW observing run (Observing Run 4 or O4) will
 As the GW component of the ToO program takes the largest amount of time and has the most impact on WFD, to enable optimal use of Rubin resources, {\bf the SCOC recommends that a meeting to follow Rubin ToO 2024 is organized closer to the start of O5 to refine the GW follow-up survey strategy with improved knowledge of the expected performance of the GW detector networks and systems in O5 and of the performance of the full Rubin system.}
 %
 
-There is no comparable time restriction for the solar system ToO program (to follow up potentially hazardous asteroids) or neutrino ToO program (to follow-up high energy neutrinos or those from a Galactic supernova). Hence, {\bf the SCOC recommends that the solar system and neutrino ToOs should start as soon as possible: as soon as suitable templates are available.} 
+There is no comparable time restriction for the solar system ToO program (to follow up potentially hazardous asteroids) or the neutrino ToO program (to follow-up high energy neutrinos or those from a Galactic supernova). Hence, {\bf the SCOC recommends that the solar system and neutrino ToOs should start as soon as possible: as soon as suitable templates are available.} 
 
 
 
@@ -340,13 +346,13 @@ The committee, observers, and Rubin leadership will review the ToO outcomes post
 \subsection{Snaps}\label{sec:snaps}
 %\tbd{The SCOC awaits commissioning assessments of the viability of collecting images in a single 1x30s exposure in all filters (rather than 2x15s), which would lead to an increase in efficiency. The SCOC has thus far seen as favorable a potential switch to a single 1x30s exposure and the associated efficiency gain. If commissioning reveals that a 1x30s exposure is indeed technically viable, the SCOC should review the benefits (and potential drawbacks) of visits in a single exposure and, if adopted, reassess its recommendations in the light of this increased efficiency.}
 
-While the LSST has originally been designed to collect two 15-second snaps for each visit, primarily to remove cosmic rays to be combined into a single visit that is subsequently processed to derive the data products, there is an opportunity to move to collect a single 30-second exposure\footnote{Note that joint with the recommendation on $u$ band exposure length and filter balance (\autoref{sec:filterbalance}) the total exposure time in all bands but $u$ drops to 29.8 seconds, and the exposure time in $u$ is 38 seconds. However, for convenience, we will continue to refer to a ``2x15 seconds'' and ``1x30 seconds'' implementation.}, as it appears that cosmic rays can be reliably rejected from a single image. The feasibility of this plan remains to be ascertained in commissioning (including from on-sky images). However, the SCOC has conducted a science-driven analysis of this proposal. 
+While the LSST has originally been designed to collect two 15-second snaps for each visit, primarily to remove cosmic rays, there is an opportunity to move to collect a single 30-second exposure\footnote{Note that joint with the recommendation on $u$ band exposure length and filter balance (\autoref{sec:filterbalance}) the total exposure time in all bands but $u$ drops to 29.2 seconds, and the exposure time in $u$ is 38 seconds. However, for convenience, we will continue to refer to a ``2x15 seconds'' and ``1x30 seconds'' implementation.}, as it appears that cosmic rays can be reliably rejected from a single image. The feasibility of this plan remains to be ascertained in commissioning (including from on-sky images). However, the SCOC has conducted a science-driven analysis of this proposal. 
 
-Going from 2x15s to a single 30s brings a gain in efficiency equivalent to ~7-9\% of the survey time (associated with reduced read-time). 
+Based on simulations, going from 2x15s to a single 30s exposure brings a gain in efficiency equivalent to ~7-9\% of the survey time (as a result of reduced camera read-out time). 
 
 
 Saturation limits will be slightly higher but this will only impact a small number of objects compared to the large volume of sources in the LSST universe. Other surveys are better equipped to work with those targets that are bright for LSST.
-Some science cases (\eg\ Cataclysmic Variables and Flares, very fast moving solar system objects) could benefit from the separate exposures, but data products associated with the snaps would not be released individually to the public in Data Releases, only the combined image and flux difference where detected are official data products, so all those science cases would depend on pipelines contributed by the community and user-generated data products. Additionally, for these cases too, other surveys are better equipped to work within those time scales.
+Some science cases (\eg\ Cataclysmic Variables and Flares, very fast moving solar system objects) could benefit from the separate exposures, but the planned data processing for the individual snap images is more limited than that applied to the combined visit, so these science cases need to rely on pipelines contributed by the community and user-generated data products. Additionally, for these cases too, other surveys are better equipped to work within those time scales.
 
 Thus, the SCOC does not see scientific opportunities associated with retaining the two 15s snaps that can compete with the 7-9\% gain in survey efficiency.
 
@@ -402,9 +408,10 @@ Nightly co-adds are required to take advantage of the increased DDF depth in the
  
  The SCOC supports Rubin's commitment to acquiring incremental templates throughout Y1 to begin dispatching alerts (via the Alert Brokers) and encourages the Observatory to release alerts as early as possible. The SCOC reviewed the Alert Production team proposal to prioritize timeliness over the quality of templates and build templates from fewer images ($\geq 3$) in Y1 than in subsequent years. Releasing some alerts in Y1 is an important goal to enable the time domain science community to prepare for the full-volume full-fidelity alert streams to come in subsequent years, as well as increasing the discovery potential of LSST in early operations. However, this goal should not overwrite the priority of obtaining a fully calibrated system by the end of Y1.
 
- {\bf The SCOC recommends that the filter balance is slightly modified in Y1 to acquire a sufficient number of $u$ band images for calibration. }
+ {\bf The SCOC recommends that the filter balance is adjusted as needed in Y1 to acquire a sufficient number of $u$ band images for calibration (and template construction). }
 
- {\bf The SCOC does not recommend beginning rolling before the end of Y1.} In the months following the release of this recommendation, the SCOC will continue to work on the implementation of rolling (\autoref{sec:rolling}) to better understand its interplay with potential Y1 outcomes. 
+ {\bf The SCOC does not recommend beginning rolling before the end of Y1 to ensure sufficiently uniform sky coverage for cosmological analysis (the DESC expects its first data analysis to be based on DR2), acquire sufficiently good data for sky calibration, and collect a 
+ sufficiently complete set of templates across the sky.} In the months following the release of this recommendation, the SCOC will continue to work on the implementation of rolling (\autoref{sec:rolling}) to better understand its interplay with potential Y1 outcomes. 
 
 %\subsection{Euclid}\label{sec:Euclid}
 %\tbd{The SCOC shall work in coordination not only with the scientific community but also with the leadership of Rubin and the Euclid mission to identify cadence requirements, co-observing strategies, and paths to produce the data products that will enhance science through the coordinated observing of the EDFS.}

@@ -20,22 +20,26 @@ Each of the points left for deliberation in  \citetalias{PSTN-055} are discussed
 Additional changes to the survey strategy are described in \autoref{sec:additional}. 
 
 The current recommendation is summarized in \autoref{sec:summary}.
-%Topics that the SCOC should focus on in the next round of deliberations follow in \autoref{sec:next}.
 
-%In \autoref{sec:process} we describe the process of interaction with the community and iterative optimization of the LSST during Operations.
+Topics that the SCOC should focus on in the next round of deliberations, including the process of interaction with the community and iterative optimization of the LSST during Operations follow in [TBD].% \autoref{sec:next}.
+
+Note: this document includes definitions of all  used within in \autoref{sec:acronyms}.
+
+\clearpage
+%In \autoref{sec:process} we describe .
 
 \section{Executive Summary of the Phase 3 recommendation}
 
-Notable updates from previous recommendations, and corresponding changes to the baseline, include: updating system throughputs,  expectations for engineering time, and slew performance; tweaking the filter balance in response to throuhgput changes; refining observing choices in the Galactic Plane, Bulge, and LMC/SMC/SCP; defining the implementation plan for the ToO program; recommending single visit exposures over visits implemented in ``snaps''; investigating new rolling strategy options; refining the DDF observing plans.
+Notable updates from previous recommendations, and corresponding changes to the baseline, include: updating system throughputs,  expectations for engineering time (particularly in the first year of LSST, Y1), and slew performance; tweaking the filter balance in response to throughput changes; refining observing choices in the Galactic Plane, Bulge, and LMC/SMC/SCP; defining the implementation plan for the ToO program; recommending single visit exposures over visits implemented in ``snaps''; investigating new rolling strategy options; refining the DDF observing plans.
 
 \subsection{Note on how to read the SCOC plots}
 
-In this document you will see sky maps measuring quantities (\eg, number of visits) in healpixels. The typical sky pixelization that underlies the metric calculations the SCOC review is 128 sides healpixels (covering an area $\sim 0.2\mathrm{deg}^2$) although for particularly computationally intense MAFs this is turned down to 64 or 32.
+In this document, you will see sky maps measuring quantities (\eg, number of visits) in healpixels. The typical sky pixelization that underlies the metric calculations the SCOC review is 128 sides healpixels (covering an area $\sim 0.2\mathrm{deg}^2$) although for particularly computationally intense MAFs this is turned down to 64 or 32.
 
 The SCOC typically reviews the outcome of MAFs across multiple \opsim\ to compare scientific performance. You will see plots in three styles:
 
 {\bf Heatmaps}: \autoref{fig:heatmap} -
-the divergent color scheme shows improvements in metrics in blue and drops in metrics in red. Note that different heat maps may show different ranges in the color scheme, but the SCOC typically considers changes of more than a few percent to be significant and less than a few percent to be in the noise. One of the \opsim\ is chosen as comparison and the corresponding column will look neutral in color.
+the divergent color scheme shows improvements in metrics in blue and drops in metrics in red. Note that different heat maps may show different ranges in the color scheme, but the SCOC typically considers changes of more than a few percent to be significant and less than a few percent to be in the noise. One of the \opsim\ is chosen as a comparison and the corresponding column will look neutral in color.
 
 \begin{figure}
   \centering
@@ -43,13 +47,13 @@ the divergent color scheme shows improvements in metrics in blue and drops in me
     	\put(50,30){\color{lsstblue}\huge DRAFT}
   \end{overpic}
 %\includegraphics[width=0.8\textwidth]{figures/v1-v34heatmap.png}
-\caption{A heatmap produced by the Observing Strategy team for the SCOC. The plot compares the performance of selected metrics across baseline simulations form \baseline{1.X} (original survey strategy) through \baseline{3.4}. In these plots, a \opsim\ is selected as the reference and all other \opsim s' performances are shown relative to that. That is: the reference \opsim\ (\baseline{2.0} in this case) has MAF=1 for all the metrics. Blue colors indicate a positive metric value, \ie\ an improvement. Red colors indicate a performance drop with respect to the reference \opsim.}
+\caption{A heatmap produced by the Observing Strategy team for the SCOC. The plot compares the performance of selected metrics across baseline simulations from \baseline{1.X} (original survey strategy) through \baseline{3.4}. In these plots, a \opsim\ is selected as the reference and all other \opsim s' performances are shown relative to that. That is: the reference \opsim\ (\baseline{2.0} in this case) has MAF=1 for all the metrics. Blue colors indicate a positive metric value, \ie\ an improvement. Red colors indicate a performance drop with respect to the reference \opsim.}
 \label{fig:heatmap}
 \end{figure}
 
 \FloatBarrier
 
-{\bf Radar plots}: \autoref{fig:radar} - when comparing small numbers of metrics and few \opsim\ we often use radar plots. Each corner of the radar plot corresponds to a metric and the colored lines inside of the plots that join each corner show metric performance. In these plots the comparison \opsim s looks like a N-gone (or N-sided circle). Where the MAF performance shows improvements compared to the comparison \opsim\ the point lies outside of the N-gone, where its a loss it sits inside. The range of performance changes, so make sure you carefully inspect the plot to see the performance scaling going in and out of the N-gone (typical values are 0.9-1.1). 
+{\bf Radar plots}: \autoref{fig:radar} - when comparing small numbers of metrics and few \opsim\ we often use radar plots. Each corner of the radar plot corresponds to a metric and the colored lines inside of the plots that join each corner show metric performance. In these plots the comparison \opsim s looks like a N-gone (or N-sided circle). Where the MAF performance shows improvements compared to the comparison \opsim\ the point lies outside of the N-gone, where it's a loss, it sits inside. The range of performance changes, so make sure you carefully inspect the plot to see the performance scaling going in and out of the N-gone (typical values are 0.9-1.1). 
 
 \begin{figure}
   \centering
@@ -58,7 +62,7 @@ the divergent color scheme shows improvements in metrics in blue and drops in me
   \end{overpic}
 
 
-\caption{A radar plot comparing performance of MAFs under different filter swapping schemes (see \autoref{sec:filterswap}). This plot compres \baseline{3.0} with \baseline{3.2}. All metrics within perform as well or better in \baseline{3.2} as shown by the orange point laying outside of the blue polygon, except \texttt{N YSO} where, however, the loss is minimal and likely not statistically significant. The range of the axis is 0.8-1.3, indicating that a point lying in the center would measure a performance 20\% worse than the reference \opsim\ and a point on the outer perimeter would indicate a 30\% improvement.}
+\caption{A radar plot comparing the performance of MAFs under different filter swapping schemes (see \autoref{sec:filterswap}). This plot compres \baseline{3.0} with \baseline{3.2}. All metrics within perform as well or better in \baseline{3.2} as shown by the orange point laying outside of the blue polygon, except \texttt{N YSO} where, however, the loss is minimal and likely not statistically significant. The range of the axis is 0.8-1.3, indicating that a point lying in the center would measure a performance 20\% worse than the reference \opsim\ and a point on the outer perimeter would indicate a 30\% improvement.}
 \label{fig:radar}
 \end{figure}
 
