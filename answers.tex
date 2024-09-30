@@ -136,7 +136,7 @@ The implementation of the 0.9 strength, two-sky-areas rolling with four cycles (
     %    	\put(50,30){\color{lsstblue}\huge DRAFT}
     %\end{overpic}
 
-    \includegraphics[width=0.4\linewidth]{figures/rolling_sampling.png}\includegraphics[width=0.58\linewidth]{figures/rolling_nsamples.png}
+    \includegraphics[height=50mm]{figures/rolling_sampling.png}\includegraphics[height=50.5mm]{figures/rolling_nsamples.png}\includegraphics[height=20mm]{figures/rolling_nsamples_legend.png}
     \caption{The mean number of observations at 24, 48, 72, and 96 hours in all bands, $g$-band only, $r$-band only, and $z$-band only as a function of the number of rolling cycles: each cycle of rolling improves the number of samples by about 7\%. On the left, the ratio of samples normalized to the number of samples when not rolling is shown for two \opsim s with 3 rolling cycles (\texttt{roll\_3\_v3.4\_10yrs} and \texttt{roll\_uniform\_early\_half\_mjdp0\_v3.4\_10yrs}) and two \opsim s with 4 rolling cycles (\baseline{3.3} and \baseline{3.4}). On the right, the absolute number of samples in $g$, $r$, and $i$ is shown. Note the overall small numbers of samples in these time scales when not rolling: $<5$ in $g$ and  $10<ns< 15$ in $r$, $i$, and $z$ at 24 hours. The rolling strategy improves sampling between 24 and 96 hours. Recall that \citetalias{PSTN-055} concluded that the sampling enabled by the rolling implemented in \baseline{3.0} (in three cycles) was still insufficient while an additional cycle improves this sampling by $\sim$5-7\%. %A fourth cycle of rolling improves this sampling by $\sim7\%$.
     }
     \label{fig:rolling_sampling}
