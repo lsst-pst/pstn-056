@@ -10,7 +10,7 @@
 \caption{Small changes to the southern portion of the footprint improve the overlap with Euclid. \label{fig:euclid-overlap}}
 \end{figure}
 
-{\bf The airmass limits for the Near-Sun Twilight microsurvey, introduced with baseline v3.0, were increased from $X=2.5$ to $X=3.0$} in \texttt{v3.2}, corresponding to decreasing the minimum solar elongation reached for this microsurvey from 40 degrees to 35 degrees (the range of solar elongations changed from 40 to 60 degrees in \texttt{v3.0} to 35 to 47 degrees in\texttt{v4.0}). This improves the likelihood of discovery of objects with interior-to-Earth orbits, increasing the survey sensitivity to this niche of discovery space. The recovered population of objects
+{\bf The airmass limits for the Near-Sun Twilight microsurvey, introduced with \baseline{3.0}, were increased from $X=2.5$ to $X=3.0$} in \texttt{v3.2}, corresponding to decreasing the minimum solar elongation reached for this microsurvey from 40 degrees to 35 degrees (the range of solar elongations changed from 40 to 60 degrees in \texttt{v3.0} to 35 to 47 degrees in \texttt{v4.0}). This improves the likelihood of discovery of objects with interior-to-Earth orbits, increasing the survey sensitivity to this niche of discovery space. The recovered population of objects
 interior to Venus at magnitude $H\leq20$ goes from \mbox{$\sim$4\%} to \mbox{$\sim$40\%} in \texttt{v3.2} and later. The impacts outside the microsurvey are negligible.
 
 \clearpage
@@ -20,7 +20,7 @@ interior to Venus at magnitude $H\leq20$ goes from \mbox{$\sim$4\%} to \mbox{$\s
 Some important assumptions underlying the simulations were updated in Phase 3 of the survey strategy recommendation process: 
 
 \begin{itemize}
-\item As of \baseline{3.6}, the downtime in year one was increased to reflect a more realistic transition into operations. This change adds approximately eight weeks of downtime reducing the number of visits by \mbox{$\sim$5\%}. The downtime in Y1 is simulated to be maximal early on and decreased to the level expected for the general LSST survey by the end of the first year (\autoref{fig:downtime}). Future simulations will aim to improve the unscheduled downtime model to better align with expectations from the Rubin Observatory Operations team. 
+\item As of \baseline{3.6}, the downtime in Y1 was increased to reflect a more realistic transition into operations. This change adds approximately eight weeks of downtime reducing the number of visits by \mbox{$\sim$5\%}. The downtime in Y1 is simulated to be maximal early on and decreased to the level expected for the general LSST survey by the end of the first year (\autoref{fig:downtime}). Future simulations will aim to improve the unscheduled downtime model to better align with expectations from the Rubin Observatory Operations team. 
 
 \item As of \baseline{3.6}, the effect of jerk on slew time is included in the simulations, and thus included in scheduling choices. Functionally, this slightly increases the overhead and decreases survey efficiency (\autoref{fig:downtime}).
 
@@ -29,7 +29,7 @@ Some important assumptions underlying the simulations were updated in Phase 3 of
     \includegraphics[width=0.37\linewidth]{figures/downtime_v3_5_year1.png}
     \includegraphics[width=0.37\linewidth]{figures/downtime_v4_0_year1.png}
     \includegraphics[width=0.24\linewidth]{figures/downtime_v4_0_year1_legend.png}
-    \caption{The time within each night of LSST (observing limited to hours darker than nautical twilight: when the sun is  \mbox{$\leq-$12$\deg$} from the horizon) in Y1 divided into on-sky exposure time, overhead for those exposures (shutter and readout time), time spent slewing, and downtime due to weather, scheduled maintenance activities, or unscheduled engineering. Before \baseline{3.6} (left plot), simulations only included steady-state expected engineering downtime, modeled as full-night downtime blocks. The \baseline{4.0} simulation (right plot) includes additional unscheduled downtime time within the first 380 nights of the survey, including breaks as short as an hour to reflect the need for engineering early in the survey. }
+    \caption{The time within each night of LSST  in Y1 divided into on-sky exposure time, overhead for those exposures (shutter and readout time), time spent slewing, and downtime due to weather, scheduled maintenance activities, or unscheduled engineering. Observing is limited to hours darker than nautical twilight (when the sun is  \mbox{$\leq-$12$\deg$} from the horizon). Before \baseline{3.6} (left plot), simulations only included steady-state expected engineering downtime, modeled as full-night downtime blocks. The \baseline{4.0} simulation (right plot) includes additional unscheduled downtime time within the first 380 nights of the survey, including breaks as short as an hour, to reflect the need for engineering early in the survey. }
     \label{fig:downtime}
 \end{figure}
 
