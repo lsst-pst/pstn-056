@@ -249,6 +249,10 @@
    \renewcommand{\CU}{DM}
    \renewcommand{\docType}{Data Management}
 }
+\DeclareOption{CTN}{
+   \renewcommand{\CU}{CTN}
+   \renewcommand{\docType}{Camera Technical Note}
+}
 \DeclareOption{TS}{
    \renewcommand{\CU}{TS}
    \renewcommand{\docType}{Telescope \& Site}
@@ -322,6 +326,12 @@
 \newcommand{\docDate}{set the date with {$\backslash$}setDocDate}
 \newcommand{\setDocDate}[1]{\renewcommand{\docDate}{#1}}
 
+\newcommand{\docDOI}{DOI if applicable}
+\newcommand{\setDocDOI}[1]{\def\@docDOI{#1}
+  \renewcommand{\docDOI}{#1}
+}
+\setDocDOI{}
+
 % allow standard \date{} to work as an alias of \setDocDate
 \renewcommand{\date}[1]{\setDocDate{#1}}
 
@@ -329,12 +339,15 @@
 \@dmccbfalse
 \newif\if@ccb
 \@ccbfalse
+\newif\if@occb
+\@occbfalse
 \newcommand{\docRef}{set the Reference with {$\backslash$}setDocRef}
 \newcommand{\setDocRef}[1]{
    \renewcommand{\docRef}{#1}
    \if@dmccb\relax\else\IfBeginWith{#1}{LDM-}{\@dmccbtrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LSE-}{\@ccbtrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LPM-}{\@ccbtrue}{}\fi
+   \if@occb\relax\else\IfBeginWith{#1}{RDO-}{\@occbtrue}{}\fi
 }
 
 \newcommand{\docAuthor}{set the Author with {$\backslash$}setDocAuthor}
@@ -403,7 +416,7 @@
 
 \newcommand{\mkmemotitle}{
    \thispagestyle{empty}
-   \newgeometry{top= 1cm,left=2cm,bottom=1cm, right=2cm} 
+   \newgeometry{top= 1cm,left=2cm,bottom=1cm, right=2cm}
    \vspace*{-30pt}
 
    \includegraphics[width=4cm]{rubin_logo}
@@ -411,14 +424,14 @@
    \begin{minipage}{0.3\textwidth}
         \begin{flushright}
         \vspace*{-50pt}
-        \large 
+        \large
         950 North Cherry Avenue,
         Tucson, AZ, 85719.
         \vspace{3mm}
-	\textbf{\docDate} 
+	\textbf{\docDate}
 	\end{flushright}
    \end{minipage}
-      
+
    \vspace{10pt}
    \textbf {To: \memoto}\\
    \textbf {From: \@author}\\
@@ -489,6 +502,11 @@
     \vspace*{0.5cm}
     \textsf{\Large \bfseries\docRef}\\
     \vspace*{0.5cm}
+    \ifx \@docDOI \@empty
+      \relax
+    \else
+      \Large \bfseries \url{https://doi.org/\docDOI}\\
+    \fi
     \textsf{\Large \bfseries Latest Revision: \docDate}
     \end{center}
    \end{minipage}
@@ -515,6 +533,17 @@
    }
    \def\@controlFootText{%
    The contents of this document are subject to configuration control by the Rubin Observatory DM Change Control Board.
+   }
+   \fi
+   \if@occb
+   \def\@controlText{%
+   This Rubin Observatory document has been approved as a Content-Controlled Document by the Rubin Observatory Change Control Board.
+   If this document is changed or superseded, the new document will retain the Handle designation shown above.
+   The control is on the most recent digital document with this Handle in the Rubin Observatory digital archive and not printed versions.
+   Additional information may be found in the corresponding CCB Jira ticket.
+   }
+   \def\@controlFootText{%
+   The contents of this document are subject to configuration control by the Rubin Observatory Change Control Board.
    }
    \fi
 
@@ -1109,19 +1138,23 @@ No actions have been identified.}
 % -----------------------------------------------------------------------------
 % Useful definition
 % -----------------------------------------------------------------------------
-\def\VRO{Vera C. Rubin Observatory~} 
-\def\RO{Rubin Observatory~} 
+\def\VRO{Vera C. Rubin Observatory~}
+\def\RO{Rubin Observatory~}
 \def\aaps{A\&AS}           % Astronomy and Astrophysics Suplement
 \def\aap{A\&A}             % Astronomy and Astrophysics
 \def\ssr{Space~Sci.~Rev.}  % Space Science Reviews
 \def\apj{ApJ}              % Astrophysical Journal
 \def\apjs{ApJS}            % Astrophysical Journal Supplement
 \def\aj{AJ}                % Astronomical Journal
+\def\jcap{JCAP}            % Journal of Cosmology and Astroparticle Physics
 \def\mnras{MNRAS}          % Monthly Notices of the RAS
 \def\araa{ARA\&A}          % Annual Review of Astron and Astrophys
 \def\nat{Nature}           % Nature
 \def\apjl{ApJ}             % Astrophysical Journal, Letters
 \def\icarus{Icarus}        % Icarus
+\def\apss{Ap\&SS}          % Astrophysics and Space Science
+\def\actaa{Acta Astron.}   % Acta Astronomica
+\def\memsai{Mem. Soc. Ast. Italiana} % Memorie della Società Astronomica Italiana
 \def\prd{Phys.~Rev.~D}     % Physical Review D
 \def\physrep{Phys.~Rep.}   % Physics Reports
 \def\pasp{PASP}            % Publications of the Astronomical Society of the Pacific
@@ -1392,7 +1425,7 @@ No actions have been identified.}
 \newcommand{\reqparam}[1]{\margin@req{#1}}
 
 % Reference a JIRA ticket
-\newcommand{\jira}[1]{\href{https://jira.lsstcorp.org/browse/#1}{#1}}
+\newcommand{\jira}[1]{\href{https://rubinobs.atlassian.net/browse/#1}{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
